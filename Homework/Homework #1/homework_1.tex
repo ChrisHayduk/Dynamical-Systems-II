@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 1}
+
+\author{Chris Hayduk}
+\date{February 11, 2021}
+
+\maketitle
+
+\section{Notebook Question}
+
+\begin{problem}{1}
+\end{problem}
+
+Let $K \subset \mathbb{R}^n$ be compact.
+
+\begin{problem}{2}
+\end{problem}
+
+\begin{problem}{3}
+\end{problem}
+
+\section{Questions from Silva}
+
+\subsection{Section 2.1}
+
+\begin{problem}{3}
+\end{problem}
+
+\begin{problem}{4}
+\end{problem}
+
+Let $A \subset \mathbb{R}$ and let $t \in \mathbb{R}$. Let us define $A + t = \{a + t: \ a \in A\}$. Suppose that $C = \bigcup I_j$ is an open cover for $A$.\\
+
+Now suppose that $C + t = \{c + t: \ c \in C\}$ is not an open cover for $A + t$. Then there exists some $a \in A$ such that $a \in C$ but $a + t \not\in C + t$. Note that since $C$ is a union of open intervals, $\exists j_a \in \mathbb{N}$ such that $a \in I_{j_a} = (x_{j_a}, y_{j_a})$. By our assumption that $a + t \not\in C + t$, we must have that $a + t \not\in (x_{j_a} + t, y_{j_a} + t)$. However, we know that $$x_{j_a} < a < y_{j_a} \iff x_{j_a} + t < a + t < y_{j_a} + t$$
+
+Thus, we have a contradiction and so $C+t$ is an open cover for $A+t$.\\
+
+Now take some countable collection $D = \bigcup I_j$ of open intervals. Suppose $D + t$ is an open cover of $A + t$ but $D$ is not an open cover of $A$. Then there exists some $a \in A$ such that $a + t \in D + t$ but $a \not\in D$. Note that since $D$ is a union of open intervals, $\exists k_a \in \mathbb{N}$ such that $a + t \in I_{k_a} + t = (c_{k_a} + t, d_{k_a} + t)$. By our assumption that $a \not\in D$, we must have that $a \not\in (c_{k_a}, d_{k_a})$. However, we know that $$c_{k_a} + t < a + t < d_{k_a} + t \iff c_{j_a} < a < d_{j_a}$$
+ 
+Thus, we have a contradiction and so $D$ is an open cover for $A$.\\
+
+From the above, we have shown that the unions of countable open intervals which cover $A$ and cover $A+t$ are precisely the same covers, up to a shift by $t$. Now note that for $I = (b, a)$, $I+t = (a+t, b+t)$, we have $$|I| = |b - a|$$ and $$|I + t| = |b + t - (a + t)| = |b - a|$$ Hence, the intervals that make up each countable union retain their length when shifted by $t$. Thus,
+\begin{align*}
+&\left\{\sum_{j=1}^{\infty} |I_j|: \ A \subset \bigcup_{j=1}^{\infty} I_j, \text{ where } I_j \text{ are bounded open intervals}\right\} =\\
+&\left\{\sum_{j=1}^{\infty} |I_j + t|: \ A+t \subset \bigcup_{j=1}^{\infty} I_j+t, \text{ where } I_j \text{ are open bounded intervals}\right\}
+\end{align*}
+
+As a result, the above two sets must have the same infimum and so $\lambda^*(A) = \lambda^*(A+t)$.
+
+\begin{problem}{5}
+\end{problem}
+
+Suppose $N$ is a null set. Then $\lambda^*(N) = 0$ by definition. Now fix some set $A \subset \mathbb{R}$. By countable subadditivity, we have that
+\begin{align*}
+\lambda^*(A \cup N) \leq \lambda^*(A) + \lambda^*(N) = \lambda^*(A)
+\end{align*}
+
+Now observe that $A \subset A \cup N$. Hence, by Proposition 2.1.1 (3), we have that $\lambda^*(A) \leq \lambda^*(N \cup A)$. Thus, by both of the above statements, we have $$\lambda^*(A \cup N) = \lambda^*(A)$$
+
+\begin{problem}{7}
+\end{problem}
+
+Suppose we have countably many null sets $N_1, N_2, \ldots$. By countable subadditivity, we have that,
+\begin{align*}
+\lambda^*\left(\bigcup_{k=1}^{\infty} N_k\right) \leq \sum_{k=1}^{\infty} \lambda^*(N_k) = 0
+\end{align*}
+
+In addition, we know that $\lambda^*\left(\bigcup_{k=1}^{\infty} N_k\right)$ is bounded below by $0$ because we are taking the infimum of a sum of interval lengths, where length is defined to be a non-negative real number. Hence, $\lambda^*\left(\bigcup_{k=1}^{\infty} N_k\right) = 0$ and thus is a null set, as required.
+
+\begin{problem}{8}
+\end{problem}
+
+Let $A \subset \mathbb{R}$ and $t \in \mathbb{R}$. Define $tA = \{ta: a \in A\}$. If $t = 0$, then $tA = \{0\}$ and so $$\lambda^*(tA) = \lambda^*(\{0\}) = 0 = |t|\lambda^*(A)$$ as required.\\
+
+Now suppose $t \neq 0$. Suppose that $C = \bigcup I_j$ is an open cover for $A$.\\
+
+Now suppose that $tC = \{tc: \ c \in C\}$ is not an open cover for $tA$. Then there exists some $a \in A$ such that $a \in C$ but $ta \not\in tC$. Note that since $C$ is a union of open intervals, $\exists j_a \in \mathbb{N}$ such that $a \in I_{j_a} = (x_{j_a}, y_{j_a})$. By our assumption that $ta \not\in tC$, we must have that $ta \not\in (tx_{j_a}, ty_{j_a} )$. However, we know that when $t$ is positive $$x_{j_a} < a < y_{j_a} \iff tx_{j_a} < ta < ty_{j_a}$$ and when $t$ is negative $$x_{j_a} < a < y_{j_a} \iff tx_{j_a} > ta > ty_{j_a}$$
+
+Thus, we have a contradiction and so $tC$ is an open cover for $tA$.\\
+
+Now take some countable collection $D = \bigcup I_j$ of open intervals. Suppose $tD$ is an open cover of $tA$ but $D$ is not an open cover of $A$. Then there exists some $a \in A$ such that $ta \in tD$ but $a \not\in D$. Note that since $D$ is a union of open intervals, $\exists k_a \in \mathbb{N}$ such that $ta \in tI_{k_a} = (tc_{k_a}, td_{k_a})$. By our assumption that $a \not\in D$, we must have that $a \not\in (c_{k_a}, d_{k_a})$. However, we know that when $t$ is positive $$tc_{k_a} < a < td_{k_a} \iff c_{j_a} < a < d_{j_a}$$ and when $t$ is negative $$tc_{k_a} < a < td_{k_a} \iff c_{j_a} > a > d_{j_a}$$
+ 
+Thus, we have a contradiction and so $D$ is an open cover for $A$.\\
+
+From the above, we have shown that the unions of countable open intervals which cover $A$ and cover $tA$ are precisely the same covers, up to a scaling by $t$. Now note that for $I = (b, a)$, $tI = (ta, tb)$, we have $$|I| = |b - a|$$ and $$|tI| = |tb - ta| = |t| \cdot |b-a|$$ Hence, the intervals that make up each cover for $A$ have their lengths scaled by $|t|$. Thus, $\sum |tI_j| = \sum |t| |I_j| = |t| \sum |I_j|$. Thus, from the reasoning above about the length of each interval and the fact that the covers for $tA$ are precisely the covers for $A$ scaled by $t$, we have
+\begin{align*}
+\lambda^*(tA) &= \inf \left\{\sum_{j=1}^{\infty} |tI_j|: \ tA \subset \bigcup_{j=1}^{\infty} tI_j, \text{ where } I_j \text{ are open bounded intervals}\right\}\\
+&= \inf |t| \cdot \left\{\sum_{j=1}^{\infty} |I_j|: \ A \subset \bigcup_{j=1}^{\infty} I_j, \text{ where } I_j \text{ are open bounded intervals}\right\}\\
+&= |t| \inf \left\{\sum_{j=1}^{\infty} |I_j|: \ A \subset \bigcup_{j=1}^{\infty} I_j, \text{ where } I_j \text{ are open bounded intervals}\right\}\\
+&= |t| \cdot \lambda^*(A)
+\end{align*}
+
+as required.
+
+\subsection{Section 2.2}
+
+\begin{problem}{5}
+\end{problem}
+
+\begin{problem}{6}
+\end{problem}
+
+Note that $K \subset [0, 1]$, and for any $x, y \in [0, 1]$, we have that $0 \leq x + y \leq 2$. Thus, $K + K \subset [0, 2]$. Now we need to show that $[0, 2] \subset K + K$
+
+
+\end{document}
