@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  6 FEB 2021 22:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  10 FEB 2021 22:19
 entering extended mode
 **./homework_1.tex
 (homework_1.tex
@@ -396,39 +396,39 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 61.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
 [1
 
 {C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-
- []
-
-[2]
 Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
@@ -436,16 +436,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 Here is how much of TeX's memory you used:
  4269 strings out of 479618
  62765 string characters out of 2865027
- 349730 words of memory out of 3000000
+ 350730 words of memory out of 3000000
  21362 multiletter control sequences out of 15000+200000
  456793 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,11n,74p,641b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
+nc/dvips/lm/lm-mathit.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
+nc/dvips/lm/lm-mathex.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
+nc/dvips/lm/lm-mathsy.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
 nc/dvips/lm/lm-rm.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
-vips/lm/lm-mathsy.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
-vips/lm/lm-mathit.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
-vips/lm/lm-mathex.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-ec.enc}<C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmbx12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmex10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
@@ -458,7 +458,7 @@ lm/lmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
 /lmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
 /lmsy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on homework_1.pdf (4 pages, 148806 bytes).
+Output written on homework_1.pdf (4 pages, 150260 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
