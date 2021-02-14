@@ -58,13 +58,28 @@
 \begin{problem}{1}
 \end{problem}
 
-Let $G = \{g_0, \ldots, g_{k-1}\}$ be a contracting iterated function system contracting similarity ratio $c < 1$. Fix $i \in \{0, \ldots, k-1\}$.
+Let $G = \{g_0, \ldots, g_{k-1}\}$ be a contracting iterated function system with contracting similarity ratio $c < 1$. Fix $i \in \{0, \ldots, k-1\}$. We have $d(g_i(x), g_i(y)) = cd(x,y)$ for all $x, y \in \mathbb{R}^n$.
 
 \begin{problem}{2}
 \end{problem}
 
+The limit set given by Definition 1 is defined as $\Lambda = \bigcap_{n=0}^{\infty} \Lambda_n$ where $\Lambda_0 = K$ and $\Lambda_n$ for $n \geq 0$ is defined as $\Lambda_{n+1} = \bigcup^{k-1}_{i=0} g_i(\Lambda_n)$.\\
+
+The limit set for Definition 2 is 
+\begin{align*}
+\{z \in \mathbb{R}^n \ : \ &\text{for any neighborhood } N \text{ of } z \text{ there are infinitely many finite words } w\\
+&\text{ such that the image } \Phi(w) \text{ lies in } N\}
+\end{align*}
+
 \begin{problem}{3}
 \end{problem}
+
+Section 1.2 of Edgar states that the Sierpinski gasket can be constructed using three dilation with ratio 1/2 and centers at the three vertices of the triangle $S_0$. Let one of these vertices be at the origin, $(0,0)$. We are given that $S_0$ has side length $1$, so the other two vertices must be at $(1, 0)$ and $(1/2, 1/2)$. Hence, the three dilations are given by,
+\begin{align*}
+f_1(x,y) &= \frac{(x, y)}{2}\\
+f_2(x,y) &= \frac{(x, y) - (1, 0)}{2}\\
+f_3(x,y) &= \frac{(x, y) - (1/2, 1/2)}{2}
+\end{align*}
 
 \section{Questions from Silva}
 
@@ -73,7 +88,13 @@ Let $G = \{g_0, \ldots, g_{k-1}\}$ be a contracting iterated function system con
 \begin{problem}{3}
 \end{problem}
 
-Suppose we have some interval from the definition of outer measure. That is, an interval $I_j$ such that $I_j$ is open and bounded. Then we can write $I_j = (a, b)$ where $a, b \in \mathbb{R}$.
+Suppose we have some interval from the definition of outer measure. That is, an interval $I_j$ such that $I_j$ is open and bounded. Then we can write $I_j = (a, b)$ where $a, b \in \mathbb{R}$. Let us fix $k \in \mathbb{Z}$ such that $k/2^j \leq a$. We will construct a sequence of dyadic intervals $[k/2^j, (k+1)/2^j), [(k+1)/2^j, (k+2)/2^j, \ldots [(k+\ell)/2^j, (k+\ell+1)/2^j$ such that $(a, b) \subset \bigcup_{i=0}^{\ell}  [(k+i)/2^j, (k+i+1)/2^j)$.\\
+
+From Lemma 2.1.2, we have,
+\begin{align*}
+b - a \leq \sum_{i=0}^{\ell} |[(k+i)/2^j, (k+i+1)/2^j)| &= \sum_{i=0}^{\ell} 1/2^j\\
+&= (\ell + 1)/2^j
+\end{align*}
 
 \begin{problem}{4}
 \end{problem}
