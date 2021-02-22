@@ -1,0 +1,182 @@
+
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 3}
+
+\author{Chris Hayduk}
+\date{February 25, 2021}
+
+\maketitle
+
+\section{Questions from Silva}
+
+\subsection{Section 2.5}
+
+\begin{problem}{14}
+\end{problem}
+
+We have that $E = \{\emptyset\} \subset X$. We also have that $\{\emptyset\} \in \mathcal{S}$. Hence, with $A, B = \{\emptyset\}$ we trivially have that $$A \subset E \subset B$$ and $$\mu(B \setminus A) = 0$$
+
+Thus, $E = \{\emptyset\} \in \mathcal{S}_{\mu}$ and $\mathcal{S}_{\mu}$ is non-empty. Now fix $E \in \mathcal{S}_{\mu}$ and consider $E^C$. Since $E \in S_{\mu}$, we have $A, B \in \mathcal{S}$ such that $$A \subset E \subset B$$ and $$\mu(B \setminus A) = 0$$
+
+Applying the complement to the above expression gives us that $A^C \supset E^C \supset B^C$. So we want to show that $\mu(A^C \setminus B^C) = 0$. But note that $A^C \setminus B^C = A^C \cap B$ and $B \setminus A = B \cap A^C$, so we have that,
+\begin{align*}
+\mu(A^C \setminus B^C) &= \mu(A^C \cap B)\\
+&= \mu(B \setminus A)\\
+&= 0
+\end{align*}
+
+Hence, $\mathcal{S}_{\mu}$ is closed under complements.\\
+
+Now let $E_n \in \mathcal{S}_{\mu}$, $n \geq 1$ and consider $\cup_{n=1}^{\infty} E_n$. For each $n$, we have that there exists $A_n, B_n \in S$ such that $A_n \subset E_n \subset B_n$ and $\mu(B_n \setminus A_n) = 0$. Since $E_n \subset B_n$ for all $n$, we must have that $\cup E_n \subset \cup B_n$. Similarly, we have $\cup A_n \subset \cup E_n$.\\
+
+Now we need to show that $\mu(\cup B_n \setminus \cup A_n) = 0$. By Corollary 2.4.2 and countable subadditivity, we have,
+\begin{align*}
+\mu(\cup B_n \setminus \cup A_n) &= \mu(\cup B_n) - \mu(\cup A_n)\\
+&\leq \mu(B_1) + \mu(B_2) + \cdots - \mu(A_1) - \mu(A_2) - \mu(A_3) - \cdots\\
+&= \mu(B_1) - \mu(A_1) + \mu(B_2) - \mu(A_2) + \mu(B_3) - \mu(A_3) + \cdots\\
+&= \mu(B_1 \setminus A_1) + \mu(B_2 \setminus A_2) + \mu(B_3 \setminus A_3) + \cdots\\
+&= 0 + 0 + 0 + \cdots\\
+&= 0
+\end{align*}
+
+Hence, $\cup E_n \in \mathcal{S}_{\mu}$ and so $\mathcal{S}_{\mu}$ is closed under countable unions. Hence, $\mathcal{S}_{\mu}$ is a $\sigma$-algebra. Now fix $E \in \mathcal{S}$. Then if we set $A, B = E \in \mathcal{S}$, we have that $A \subset E \subset B$ and $\mu(B \setminus A) = \mu(E \setminus E) = \mu(\emptyset) = 0$ as required. Thus, every element in $\mathcal{S}$ is also in $\mathcal{S}_{\mu}$, and so $\mathcal{S}_{\mu}$ is a $\sigma$-algebra containing $\mathcal{S}$.
+
+\begin{problem}{15}
+\end{problem}
+
+\subsection{Section 2.6}
+
+\begin{problem}{2}
+\end{problem}
+
+Note that the rational numbers are countable and that for each $q \in \mathbb{Q}$, we have that $\{q\}$ is closed. Thus, $\{q\}^C$ is open for all $q \in \mathbb{Q}$. Hence, if we take,
+\begin{align*}
+\bigcap_{q \in \mathbb{Q}} \{q\}^C
+\end{align*}
+
+we see that we are taking a countable intersection of open sets. This is precisely the definition of a $G_{\delta}$ set. Moreover, this set is the intersection of the complements of the rational numbers. That is, the only numbers in $\mathbb{R}$ not included in this set are the rationals. Hence, we have constructed the irrational numbers.\\
+
+Note the irrational numbers are not open. If we fix an irrational number $x$, observe that for any value of $\epsilon > 0$, we will find a rational number $q$ such that $q \in B(x, \epsilon)$. This follows directly from the fact that $\mathbb{Q}$ is dense in $\mathbb{R}$. Moreover, the irrational numbers are not closed. The irrationals are also dense in $\mathbb{R}$, so by definition we can find a sequence of irrational numbers converging to any real number. If we pick $q \in \mathbb{Q} \subset \mathbb{R}$, then we see that we can construct a sequence of irrational numbers which converge to $q \not\in \bigcap_{q \in \mathbb{Q}} \{q\}^C$. Thus, the irrational numbers are neither open nor closed as required.
+
+\begin{problem}{5}
+\end{problem}
+
+\subsection{Section 2.7}
+
+\begin{problem}{1}
+\end{problem}
+
+Suppose that $\mathcal{C}$ is a semi-ring of subsets of a nonempty set $X$ and $\emptyset \neq Y \subset X$. Consider the collection $\{A \cap Y \ : \ A \in \mathcal{C} \}$ and suppose that this collection is non-empty.\\
+
+Suppose $C, D \in \{A \cap Y : A \in \mathcal{C} \}$. We have $C = A \cap Y$ and $D = B \cap Y$ for some $A, B \in \mathcal{C}$. Consider the following,
+\begin{align*}
+C \cap D &= (A \cap Y) \cap (B \cap Y)\\
+&= (A \cap B) \cap Y
+\end{align*}
+
+Since $\mathcal{C}$ is a semi-ring, we have that $A \cap B \in \mathcal{C}$ and so $C \cap D = (A \cap B) \cap Y$ is in our collection.\\
+
+Now consider $C \setminus D$. We can express this as the following,
+\begin{align*}
+C \setminus D &= (A \cap Y) \setminus (B \cap Y)\\
+&= (A \setminus B) \cap Y
+\end{align*}
+
+Since $\mathcal{C}$ is a semi-ring, we have that $A \setminus B$ can be expressed as $$\sqcup_{j=1}^n E_j$$ where $E_j \in \mathcal{C}$ for every $j$. Thus, we can rewrite the previous statement as,
+\begin{align*}
+C \setminus D &= (A \setminus B) \cap Y\\
+&= (\sqcup_{j=1}^n E_j) \cap Y\\
+&= \sqcup_{j=1}^n (E_j \cap Y)
+\end{align*}
+
+Since $E_j \in \mathcal{C}$, we have that $E_j \cap Y \in \{A \cap Y \ : \ A \in \mathcal{C} \}$. Furthermore, since $E_j \in \mathcal{C}$ are disjoint, $E_j \cap Y \in \{A \cap Y \ : \ A \in \mathcal{C} \}$ are disjoint as well. Therefore, $C \setminus D$ satisfies all the required properties for a semi-ring.\\
+
+Now let us extend to the case where $\mathcal{C}$ is a ring. We now need to show that our new collection is closed under finite unions. It suffices to show that the collection is closed for a single union (i.e. $C \cup D$) because we can then extend this union a finite number of times $n$. So now let us consider $C \cup D$,
+\begin{align*}
+C \cup D &= (A \cap Y) \cup (B \cap Y)\\
+&= (A \cup B) \cap Y
+\end{align*}
+
+Since $\mathcal{C}$ is a ring, we have that $A \cup B \in \mathcal{C}$ and so $(A \cup B) \cap Y$ is in our collection. Hence, $\{A \cap Y \ : \ A \in \mathcal{C} \}$ is a ring.
+
+\begin{problem}{2}
+\end{problem}
+
+Let $(X, \mathcal{L}, \lambda)$ be a canonical Lebesgue measure space and $\mathcal{C}$ a sufficient semi-ring. Now for any nonempty measurable set $X_0 \subset X$, consider $\mathcal{C} \cap X_0 = \{C \cap X_0 : C \in \mathcal{C}\}$.
+
+\begin{problem}{6}
+\end{problem}
+
+\begin{problem}{7}
+\end{problem}
+
+\subsection{Section 3.3}
+
+\begin{problem}{1}
+\end{problem}
+
+Define $T: [0, 1] \to [0,1]$ by $T(x) = 2x$ if $0 \leq x \leq 1/2$ and $T(x) = 2 - 2x$ if $1/2 < x < 1$. Define $S_1: [0, 1] \to [0, 1/2]$ by $S_1(y) = y/2$ and $S_2: [0, 1] \to [1/2, 1]$ by $S_2(y) = y/2 + 1/2$. For a measurable set $A \subset [0, 1]$. We have that,
+\begin{align*}
+T^{-1}(A) &= S_1(A) \sqcup (S_2(A \setminus \{0\}))
+\end{align*}
+
+Since we are taking a singleton away from $A$ and $S_2$ is a well-defined function, this will not change the measure of $S_2(A)$. Thus, from the above and from the results in Chapter 2, we have,
+\begin{align*}
+\lambda(T^{-1}(A)) &= \lambda(S_1(A)) + \lambda(S_2(A \setminus \{0\}))\\
+&= \lambda(\frac{1}{2}A) + \lambda(\frac{1}{2}A + \frac{1}{2})\\
+&= \frac{1}{2}\lambda(A) + \frac{1}{2}\lambda(A)\\
+&= \lambda(A)
+\end{align*}
+
+Thus, $T$ is measure preserving.
+
+
+
+\end{document}
