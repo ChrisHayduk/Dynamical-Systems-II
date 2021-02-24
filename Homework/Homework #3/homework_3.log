@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  21 FEB 2021 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  23 FEB 2021 23:25
 entering extended mode
 **./homework_3.tex
 (homework_3.tex
@@ -408,37 +408,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--78
 [1
 
 {C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
-[3] [4] (homework_3.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+[5] [6] (homework_3.aux) ) 
 Here is how much of TeX's memory you used:
- 4265 strings out of 479618
- 62727 string characters out of 2865027
- 350730 words of memory out of 3000000
- 21360 multiletter control sequences out of 15000+200000
- 450813 words of font info for 73 fonts, out of 3000000 for 9000
+ 4269 strings out of 479618
+ 62765 string characters out of 2865027
+ 352730 words of memory out of 3000000
+ 21362 multiletter control sequences out of 15000+200000
+ 456793 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,9n,74p,739b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,11n,74p,739b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
-nc/dvips/lm/lm-mathex.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
 nc/dvips/lm/lm-rm.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
+vips/lm/lm-mathex.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-mathsy.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-mathit.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-ec.enc}<C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
@@ -448,13 +488,14 @@ lic/lm/lmmi12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmmi8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmr12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/lm/lmr17.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/lm/lmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmsy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb>
-Output written on homework_3.pdf (4 pages, 147955 bytes).
+/lm/lmr6.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmsy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb>
+Output written on homework_3.pdf (6 pages, 174295 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

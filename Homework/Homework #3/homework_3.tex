@@ -91,6 +91,33 @@ Hence, $\cup E_n \in \mathcal{S}_{\mu}$ and so $\mathcal{S}_{\mu}$ is closed und
 \begin{problem}{15}
 \end{problem}
 
+Define $\overline{\mu}$ on elements of $S_{\mu}$ by $\overline{\mu}(E) = \mu(A)$ for any $A \in \mathcal{S}$ such that there is a $B \in \mathcal{S}$ with $A \subset E \subset B$ and $\mu(B \setminus A) = 0$.\\
+
+Fix $E \in S_{\mu}$ and let $A, B \in \mathcal{S}$ be any two sets such that $A \subset E \subset B$ and $\mu(B \setminus A) = 0$.\\
+
+Since $E \subset B$, we have that $E \setminus A \subset B \setminus A$. Thus,
+\begin{align*}
+\mu(E \setminus A) \leq \mu(B \setminus A) = 0
+\end{align*}
+
+For any other choice of $A', B' \in \mathcal{S}$ such that $A' \subset E \subset B'$ and $\mu(B' \setminus A') = 0$, we also have that $\mu(E \setminus A') = 0$. Since $A, A' \subset E$, we have,
+\begin{align*}
+\mu(A' \triangle A) &\leq \mu(E \setminus A)\\
+&= 0
+\end{align*}
+
+Hence, we have that $\mu(A' \setminus A) = 0 = \mu(A \setminus A')$. Now note that,
+\begin{align*}
+\mu(A') &= \mu(A \setminus (A \setminus A')\\
+&= \mu(A) - \mu(A \setminus A')\\
+&= \mu(A) - 0\\
+&= \mu(A)
+\end{align*}
+
+Thus, we have that $\overline{\mu}(E)$ is independent of the choice of $A$ and $B$.\\
+
+Now fix $E_1 \in \mathcal{S}_{\mu}$ with $\mu(E_1) = 0$ and consider $E_2 \subset E_1$.
+
 \subsection{Section 2.6}
 
 \begin{problem}{2}
@@ -107,6 +134,8 @@ Note the irrational numbers are not open. If we fix an irrational number $x$, ob
 
 \begin{problem}{5}
 \end{problem}
+
+Let $\mathcal{C}$ be the set of all closed intervals with rational endpoints. That is, intervals of the form $\left[ \frac{p_1}{q_1}, \frac{p_2}{q_2} \right]$ with $p_1, q_1, p_2, q_2 \in \mathbb{Z}$.
 
 \subsection{Section 2.7}
 
@@ -149,7 +178,47 @@ Since $\mathcal{C}$ is a ring, we have that $A \cup B \in \mathcal{C}$ and so $(
 \begin{problem}{2}
 \end{problem}
 
-Let $(X, \mathcal{L}, \lambda)$ be a canonical Lebesgue measure space and $\mathcal{C}$ a sufficient semi-ring. Now for any nonempty measurable set $X_0 \subset X$, consider $\mathcal{C} \cap X_0 = \{C \cap X_0 : C \in \mathcal{C}\}$.
+Let $(X, \mathcal{L}, \lambda)$ be a canonical Lebesgue measure space and $\mathcal{C}$ a sufficient semi-ring. Now for any nonempty measurable set $X_0 \subset X$, consider $\mathcal{C} \cap X_0 = \{C \cap X_0 : C \in \mathcal{C}\}$. We want to show that this set is a sufficient semi-ring for $(X_0, \mathcal{L}(X_0), \lambda)$.\\
+
+Fix $Y \in \mathcal{C} \cap X_0$. Then $Y = C \cap X_0$ for some $C \in \mathcal{C}$ and so $y \in Y \iff y \in X_0$ and $y \in C$. Thus, $Y \subset X_0$ by definition and, as a result, every set in $\mathcal{C} \cap X_0$ is a subset of $X_0$.\\
+
+Now since $\mathcal{C}$ is a semi-ring, we have $\emptyset \in \mathcal{C}$. Hence, $\emptyset \cap X_0 = \emptyset \in \mathcal{C} \cap X_0$, and so the collection is non-empty.\\
+
+Fix $A, B \in \mathcal{C} \cap X_0$. Then $A = C_1 \cap X_0$, $B = C_2 \cap X_0$ for some $C_1, C_2 \in \mathcal{C}$. We have,
+\begin{align*}
+A \cap B &= (C_1 \cap X_0) \cap (C_2 \cap X_0)\\
+&= (C_1 \cap C_2) \cap X_0
+\end{align*}
+
+Since $\mathcal{C}$ is a sufficient semi-ring, we have that $C_1 \cap C_2 \in \mathcal{C}$ and thus $(C_1 \cap C_2) \cap X_0 \in \mathcal{C} \cap X_0$.\\
+
+Now consider $A \setminus B$. Note that this is given by $(C_1 \cap X_0) \setminus (C_2 \cap X_0)$. This is equivalent to $(C_1 \setminus C_2) \cap X_0$. Since $C_1, C_2 \in \mathcal{C}$, we have,
+\begin{align*}
+C_1 \setminus C_2 &= \sqcup_{j=1}^n E_j
+\end{align*}
+
+where $E_j \in \mathcal{C}$ are disjoint. Rewriting our formulation for $A \setminus B$ yields,
+\begin{align*}
+A \setminus B &= (C_1 \setminus C_2) \cap X_0\\
+&= (\sqcup_{j=1}^n E_j) \cap X_0\\
+&= \sqcup_{j=1}^n (E_j \cap X_0)
+\end{align*}
+
+Note that $E_j \cap X_0 \in \mathcal{C} \cap X_0$ for every $j$. Also note that the sets $E_j \cap X_0$ are disjoint. To prove this, fix $i$ and $j$ and suppose $x \in E_j \cap X_0$ and $x \in E_i \cap X_0$. Then by the definition of intersection, we have that $x \in E_j$, $x \in E_i$, and $x \in X_0$. But we know that $E_i, E_j$ are disjoint, so $x$ cannot be in both sets. Thus we have a contradiction and the sets $E_j \cap X_0$ are disjoint as required.\\
+
+Hence we have shown that $\mathcal{C} \cap X_0$ is a semi-ring. Now we need to show that it satisfies the sufficient semi-ring property. First we need to show that every set contained in $\mathcal{C} \cap X_0$ has finite measure. Consider $A$ as defined above. We have,
+\begin{align*}
+\lambda(A) &= \lambda(C_1 \cap X_0)\\
+&\leq \lambda(C_1) < \infty
+\end{align*}
+
+Hence, $A$ has finite measure. Recall that $\mathcal{C}$ is a sufficient semi-ring. Then $$\lambda(C_1) = \inf \left\{ \sum_{j=1}^{\infty} \lambda(I_j) \ : \ C_1 \subset \cup_{j=1}^{\infty}I_j \text{ and } I_j \in \mathcal{C} \text{ for } j \geq 1 \right\}$$ Applying this to the definition of $A$ yields,
+\begin{align*}
+\lambda(A) &= \lambda(C_1 \cap X_0)\\
+&= \inf \left\{ \sum_{j=1}^{\infty} \lambda(I_j \cap X_0) \ : \ A \subset \cup_{j=1}^{\infty} I_j \cap X_0 \text{ and } I_j \cap X_0 \in \mathcal{C} \cap X_0 \text{ for } j \geq 1 \right\}
+\end{align*} 
+
+as required.
 
 \begin{problem}{6}
 \end{problem}
