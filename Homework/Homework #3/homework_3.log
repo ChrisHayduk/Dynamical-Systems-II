@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  23 FEB 2021 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  24 FEB 2021 23:55
 entering extended mode
 **./homework_3.tex
 (homework_3.tex
@@ -428,54 +428,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--132
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-[5] [6] (homework_3.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+
+ []
+
+[6] [7] (homework_3.aux) ) 
 Here is how much of TeX's memory you used:
  4269 strings out of 479618
  62765 string characters out of 2865027
- 352730 words of memory out of 3000000
+ 353730 words of memory out of 3000000
  21362 multiletter control sequences out of 15000+200000
  456793 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,74p,739b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,11n,74p,991b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
 nc/dvips/lm/lm-rm.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-mathex.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
@@ -493,9 +528,9 @@ m/lmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
 lmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
 lmsy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on homework_3.pdf (6 pages, 174295 bytes).
+Output written on homework_3.pdf (7 pages, 183636 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
