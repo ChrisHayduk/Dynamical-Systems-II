@@ -50,7 +50,7 @@
 \title{Dynamical Systems II: Homework 3}
 
 \author{Chris Hayduk}
-\date{February 25, 2021}
+\date{March 2, 2021}
 
 \maketitle
 
@@ -116,7 +116,22 @@ Hence, we have that $\mu(A' \setminus A) = 0 = \mu(A \setminus A')$. Now note th
 
 Thus, we have that $\overline{\mu}(E)$ is independent of the choice of $A$ and $B$.\\
 
-Now fix $E_1 \in \mathcal{S}_{\mu}$ with $\mu(E_1) = 0$ and consider $E_2 \subset E_1$.
+Now fix $E_1 \in \mathcal{S}_{\mu}$ with $\overline{\mu}(E_1) = 0$ and consider $E_2 \subset E_1$. We have that there exist $A, B \in \mathcal{S}$ such that $A \subset E_1 \subset B$ and $\mu(B \setminus A) = 0$. Since $\overline{\mu}(E_1) = 0$, we have that $\mu(A) = 0$ as well. We have that $\mu(B) \geq \mu(A) = 0$, so we can state:
+\begin{align*}
+\mu(B \setminus A) &= \mu(B) - \mu(A)\\
+&= \mu(B)\\
+&= 0
+\end{align*}
+
+Hence, $A, B$ both have measure $0$. Let us take $A = \emptyset \in \mathcal{S}$ then and keep $B$ as above. Clearly we have $A \subset E_2 \subset E_1 \subset B$ and $\mu(B \setminus A) = 0$. As a result, we get that,
+\begin{align*}
+\overline{\mu(E_2)} &= \mu(A)\\
+&= \mu(\emptyset)\\
+&= 0
+\end{align*}
+
+Thus, $E_2$ is measurable and $\overline{\mu}$ is a complete measure on $\mathcal{S}_{\mu}$.
+
 
 \subsection{Section 2.6}
 
@@ -245,7 +260,7 @@ Now fix $A, B \in r(\mathcal{C})$. Then $A, B$ are in every ring containing $\ma
 
 Now consider $A \setminus B$. Since $A, B \in r(\mathcal{C})$, then $A, B$ are in every ring containing $\mathcal{C}$. Thus, there exist disjoint sets $E_j$ such that $$A \setminus B = \sqcup_{j=1}^n E_j$$ Hence, $E_j \in r(\mathcal{C})$ for $j = 1, \ldots, n$.\\
 
-Lastly, since $A, B$ in every ring containing $\mathcal{C}$ and each ring is closed under finite unions, we must have that $A \cup B$ is in every ring containing $\mathcal{C}$. Hence, $A \cup B \in r(\mathcal{C})$.
+Lastly, since $A, B$ in every ring containing $\mathcal{C}$ and each ring is closed under finite unions, we must have that $A \cup B$ is in every ring containing $\mathcal{C}$. Hence, $A \cup B \in r(\mathcal{C})$ and we have that $r(\mathcal{C})$ is a ring, as required.
 
 \begin{problem}{7}
 \end{problem}
@@ -288,7 +303,11 @@ Since we are taking a singleton away from $A$ and $S_2$ is a well-defined functi
 &= \lambda(A)
 \end{align*}
 
-Thus, $T$ is measure preserving.
+Thus, $T$ is measure preserving.\\
+
+Now, by the explanation on page 76 in the text, we can consider $T$ as operating on the symbolic binary representation of a point $x = (a_1a_2a_3\ldots)$. When applying $T(x)$, we get $(a_2a_3\ldots)$. For an irrational number, this sequence never repeats itself. Hence, if $x$ is irrational, we have that $T^n(x)$ is distinct for all $n \in \mathbb{Z}_{\geq 0}$. An example in $[0, 1)$ would be $x_0 = \sqrt{2} - 1$.\\
+
+Since $T(x) \in [0, 1]$ for all $x \in [0, 1]$, we have that $T^n(x_0) \in [0, 1]$ for all $n$.
 
 
 
