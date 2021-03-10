@@ -41,6 +41,9 @@
   \end{array}\right)
 }
 
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
 \DeclareMathOperator*{\E}{\mathbb{E}}
 
 
@@ -60,31 +63,200 @@
 \begin{problem}{1}
 \end{problem}
 
+Suppose we have $n > 0$ disjoint subsets of $\mathbb{N}$, which we will denote as $A_i$ for each $1 \leq i \leq n$. For now, suppose each $A_i$ is a finite set. Let us take the union of these sets, $A = \sqcup_{i=0}^n A_i$. We have that,
+\begin{align*}
+\mu(A) &= \sum_{k \in A} \frac{1}{2^k}
+\end{align*}
+
+However, since the $A_i$ are all disjoint, we have that each $k$ is in one and only one $A_i$. Hence, we can re-index this summation as,
+\begin{align*}
+\mu(A) &= \sum_{k \in A_1 \text{ or } k \in A_2 \text{ or } \ldots \text { or } k \in A_n} \frac{1}{2^k}
+\end{align*}
+
+Since each of these possibilities are disjoint, let us split it up into separate summations,
+\begin{align*}
+\mu(A) &= \sum_{k \in A_1} \frac{1}{2^k} + \sum_{k \in A_2} \frac{1}{2^k} + \cdots + \sum_{k \in A_n} \frac{1}{2^k}\\
+&= \mu(A_1) + \mu(A_2) + \cdots + \mu(A_n)
+\end{align*}
+
+So we have covered the case where each $A_i$ is finite. Now suppose at least one is infinite. Then we must also have that $A$ is infinite and so $\mu(A) = \infty$. Observe we also have,
+\begin{align*}
+\sum_{i=1}^n \mu(A_i) &= \mu(A_1) + \mu(A_2) + \cdots + \infty + \cdots + \mu(A_n)\\
+&= \infty
+\end{align*}
+
+Hence, we have that $\mu(A) = \mu(A_1) + \mu(A_2) + \cdots + \mu(A_n)$ once again and thus, $\mu$ is finitely additive.\\
+
+Now suppose we have a countable number of sets $A_i$, where $A_i = \{i\}$. Then we have,
+\begin{align*}
+\sum \mu(A_i) &= \mu(A_1) + \mu(A_2) + \cdots\\
+&= \frac{1}{2} + \frac{1}{2^2} + \cdots\\
+&= \sum_{i=1}^{\infty} \frac{1}{2^i}\\
+&= 1
+\end{align*}
+
+However, if we consider $A = \sqcup A_i$, we have that $A = \mathbb{N}$ and hence is an infinite set. Thus, $\mu(A) = \infty$ and so,
+\begin{align*}
+\mu(A) \neq  \sum \mu(A_i)
+\end{align*}
+
+Thus, $\mu$ is not countably additive.
 
 \begin{problem}{2}
 \end{problem}
 
+Since $\mathcal{R}$ is a semi-ring, we have that $A \setminus \emptyset \in \mathcal{R}$ and,
+\begin{align*}
+A \setminus \emptyset &= A\\
+&= \sqcup_{j=1}^n E_j
+\end{align*}
+
+for some disjoint sets $E_j \in \mathcal{R}$. Moreover, since $K = \cup K_i$ with $K_i \in \mathcal{R}$ for every $i$, we can apply Proposition 2.7.1 and get,
+\begin{align*}
+K = \sqcup_{k=1}^{\infty} C_k
+\end{align*}
+
+where the sets $\{C_k\}$ are disjoint and in $\mathcal{R}$. Now consider $K \setminus A$ using these above definitions. We have,
+\begin{align*}
+K \setminus A &= \left(\sqcup_{k=1}^{\infty} C_k \right) \setminus \left(\sqcup_{j=1}^n E_j\right)\\
+&= \left(\sqcup_{k=1}^{\infty} C_k \setminus \left(\sqcup_{j=1}^n E_j\right)\right)
+\end{align*}
+
+Observe that for each $k$, the set $C_k \setminus \left(\sqcup_{j=1}^n E_j\right)$ is in $\mathcal{R}$. Hence, we have that $$C_k \setminus \left(\sqcup_{j=1}^n E_j\right) = \sqcup_{j=1}^n E_j^{(k)}$$ Note that for each $k$, we have that,
+\begin{align*}
+C_k \setminus \left(\sqcup_{j=1}^n E_j\right) \cap A &= \sqcup_{j=1}^n E_j^{(k)} \cap A\\
+&= \emptyset
+\end{align*}
+
+Moreover, for $k_1 \neq k_2$, since $C_{k_1} \cap C_{k_2} = \emptyset$, then $\left(\sqcup_{j=1}^n E_j^{(k_1)}\right) \cap \left(\sqcup_{j=1}^n E_j^{(k_2)}\right)$ and so $E_j^{k_1} \cap E_i^{k-2} = \emptyset$ for any $i, j$.\\
+
+Lastly, note that,
+\begin{align*}
+K \setminus A \sqcup A &= \sqcup_{k=1}^{\infty} \left(\sqcup_{j=1}^n E_j^{(k)}\right) \sqcup \left(\sqcup_{j=1}^n E_j\right) \\
+&= K
+\end{align*}
+
+Hence,
+\begin{align*}
+\mu(K) &= \mu(K \setminus A) + \mu(A)\\
+&= \mu(\sqcup_{k=1}^{\infty} \left(\sqcup_{j=1}^n E_j^{(k)}\right) + \mu(A)\\
+&= \sum_{k=1}^{\infty} \mu(\sqcup_{j=1}^n E_j^{(k)}) + \mu(A)\\
+&= \sum_{k=1}^{\infty} \sum_{j=1}^n \mu(E_j^{(k)}) + \mu(A)
+\end{align*}
+
+Since $\mu(E_j^{(k)}) \geq 0$ for all $j, k$, we must have from the above derivation that $\mu(A) \leq \mu(K)$. Moreover, we have that,
+\begin{align*}
+K &= \cup_i K_i\\
+&= \sqcup_k C_k
+\end{align*}
+
+So,
+\begin{align*}
+\mu(K) &= \mu(\cup_i K_i)\\
+&= \mu(\sqcup_k C_k)\\
+&= \sum_k \mu(C_k)
+\end{align*}
 \begin{problem}{5}
 \end{problem}
+
+Suppose $\mu$ is countably additive. Since finite collections are countable, we must have that for any disjoint sets $A_i$, $1 \leq i \leq n$ in $\mathcal{R}$, we have that,
+\begin{align*}
+\mu\left(\sqcup_{i=1}^n A_i \right) = \sum_{i=1}^n \mu(A_i)
+\end{align*}
+
+Hence, $\mu$ is finitely additive. Moreover if we have a countably infinite collection disjoint of sets $B_i$ where each $B_i \in \mathcal{R}$, then since $\mu$ is countably additive, we have,
+\begin{align*}
+\mu\left(\sqcup_{i=1}^{\infty} B_i \right) = \sum_{i=1}^{\infty} \mu(B_i)
+\end{align*}
+
+which satisfies the definition of countable subadditivity.\\
+
+Now assume $\mu$ is additive and countably subadditive.
 
 \subsection{Section 3.2}
 
 \begin{problem}{2}
 \end{problem}
 
+Let $d \in \{x_1.x_2x_3x_4 \ | x_1 \in \{1, 2, \ldots, 9\} \text{ and } x_2, x_3, x_4 \in \{0, 1, 2, \ldots, 9\}\}$. Then $d$ is the set of numbers between $1.000$ and $9.999$ (inclusive) that have terminating decimal expansion of length $4$. Now suppose the decimal representation of $3^n$ starts with $d \cdot 10^3$. Then for some integer $k \geq 0$,
+\begin{align*}
+d \cdot 10^k \leq 3^n < (d+0.001) \cdot 10^k
+\end{align*}
+
+Thus,
+\begin{align*}
+\log_{10} (d \cdot 10^k) \leq \log_{10} 3^n < \log_{10} ((d+0.001) \cdot 10^k
+\end{align*}
+
+which gives us,
+\begin{align*}
+\log_{10} d \leq n\log_{10} 3 - k < \log_{10}(d+0.001)
+\end{align*}
+
+and finally,
+\begin{align*}
+\log_{10} d \leq n\log_{10} 3 \Mod{1} < \log_{10}(d+0.001)
+\end{align*}
+
+But this is the same as saying that, letting $\alpha = \log_{10} 3$,
+\begin{align*}
+R_{\alpha}^n(0) \in [\log_{10} d, \log_{10}(d+0.001))
+\end{align*}
+
+Since $0 \leq \log_{10} d < 1$ based on our definition of $d$ and $\alpha$ is irrational, we can apply Theorem 3.2.3. Thus, there are infinitely many integers $n$ such that $R_{\alpha}^n(0) \in [\log_{10} d, \log_{10} (d+0.001))$. Hence, there are infinitely many powers of $3$ that start with $1984$.
+
 \subsection{Section 3.4}
 
 \begin{problem}{1}
 \end{problem}
 
+We have that the collection of left-closed, right-open dyadic intervals form a sufficient semi-ring for $(\mathbb{R}, \mathcal{L}, \lambda)$. Suppose $I \in \mathcal{C}$. Then we write $I = [k/2^i, (k+1)/2^i)$ for integers $k, i$ with $i, k \in \mathbb{Z}$. We have $\mu(I) = \frac{1}{2^i}$. Moreover, we have $T^{-1}(x) = x \pm \sqrt{x^2 + 4}$ for $x \neq 0$ and $T^{-1}(0) = 0$. This gives us,
+
+\begin{align*}
+T^{-1}(I) &= \left[k/2^i + \sqrt{k^2/2^{2i} + 4}, (k+1)/2^i + \sqrt{(k+1)^2/2^{2i} + 4} \right) \ \bigcup \\
+&\left[k/2^i - \sqrt{k^2/2^{2i} + 4}, (k+1)/2^i - \sqrt{(k+1)^2/2^{2i} + 4} \right)
+\end{align*}
+
+$T^{-1}(I)$ is a finite union of intervals and is hence measurable.\\
+
+Observe that $\sqrt{(k+1)^2/2^{2i} + 4} > \sqrt{(k+1)^2/2^{2i}} = (k+1)/2^i$ and  $\sqrt{k^2/2^{2i} + 4} > \sqrt{k^2/2^{2i}} = k/2^i$. Hence, $T^{-1}(I)$ is a disjoint union and,
+\begin{align*}
+\mu \left( T^{-1}(I) \right) &= \mu\left( \left[k/2^i + \sqrt{k^2/2^{2i} + 4}, (k+1)/2^i + \sqrt{(k+1)^2/2^{2i} + 4} \right) \right) +\\
+& \mu \left( \left[k/2^i - \sqrt{k^2/2^{2i} + 4}, (k+1)/2^i - \sqrt{(k+1)^2/2^{2i} + 4} \right) \right)\\
+&= (k+1)/2^i + \sqrt{(k+1)^2/2^{2i} + 4}  - (k/2^i + \sqrt{k^2/2^{2i} + 4}) + \\
+&(k+1)/2^i - \sqrt{(k+1)^2/2^{2i} + 4} - k/2^i + \sqrt{k^2/2^{2i} + 4}\\
+&= (k+1)/2^i - k/2^i + (k+1)/2^i - k/2^i\\
+&= 2(k+1)/2^i - 2k/2^i\\
+&= (k+1)/2^{i-1} - k/2^{i-1}\\
+&= 1/2^{i-1}
+\end{align*}
+
 \begin{problem}{2}
 \end{problem}
+
+Suppose $(X, \mathcal{S}, \mu)$ is a $\sigma$-finite measure-space and $T: X \to X$ is measure-preserving. Fix $X_0 \in \mathcal{S}(X)$ with $T^{-1}(X_0) = X_0$.We want to show that the system $(X_0, \mathcal{S}(X_0), \mu, T)$ is a measure-preserving dynamical system. That is $(X_0, \mathcal{S}(X_0), \mu)$ is a $\sigma$-finite measure space and $T: X_0 \to X_0$ is a measure preserving transformation.\\
+
+By Proposition 2.5.1, since $X_0 \subset X$ is in $\mathcal{S}$, we have that $\mathcal{S}(X_0) = \{A: \ A \subset X_0 \text{ and } X_0 \in \mathcal{S}\}$ is a $\sigma$-algebra on $X_0$. Since the original measure space was $\sigma$-finite, there exist a sequence of measurable sets $A_n$ of finite measure such that,
+\begin{align*}
+X = \bigcup_{n=1}^{\infty} A_n
+\end{align*}
+
+Since $X_0$ is in the collection of measurable sets and is a subset of $X$, we can remove sets from the sequence $B_n$, creating a new sequence $B_n$ such that,
+\begin{align*}
+X_0 = \bigcup_{n=1}^{\infty} B_n
+\end{align*}
+
+Hence, the new measure space is $\sigma$-finite as well.
 
 \begin{problem}{3}
 \end{problem}
 
+Let $(X, \mathcal{S}, \mu)$ be a $\sigma$-finite measure space and let $X_0 \in \mathcal{S}(X)$ with $\mu(X \setminus X_0) = 0$. Suppose there exists a transformation $T_0$ so that $(X_0, \mathcal{S}(X_0), \mu, T_0)$ is a measure-preserving dynamical system. Since the original measure space is $\sigma$-finite
+
 \begin{problem}{4}
 \end{problem}
+
+Suppose $(X, \mathcal{S}, \mu, T)$ is a measure-preserving dynamical system. 
 
 
 \end{document}
