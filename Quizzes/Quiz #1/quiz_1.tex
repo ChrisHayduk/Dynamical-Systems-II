@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Quiz 1}
+
+\author{Chris Hayduk}
+\date{March 11, 2021}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let $$T(x) = \frac{x-a_i}{a_{i+1} - a_i}$$ with $x \in [a_i, a_{i+1})$. $T: J \to J$ where $J = [0, 1)$. And $0 = a_0 < a_1 < \cdots < a_k = 1$. We want to show that $T$ is a measure preserving transformation of $(J, \mathcal{L}(J), \lambda)$ regardless of choice of $\{a_i\}$.\\
+
+We have that $T^{-1}(x) = x(a_{i+1} - a_i) + a_i$. Let $\mathcal{C}$ be the collection of left-closed, right-open dyadic intervals in $[0, 1)$. We saw in Section 2.7 that $\mathcal{C}$ is a sufficient semi-ring. For $I$ we write $I=[k/2^i, (k+1)/2^i)$ for integers $k, i$ with $i \geq 0$ and $k \in \{0, \ldots, 2^i -1\}$. Observe that $\lambda(I) = 1/2^i$ for all $I \in \mathcal{C}$. Assume for a fixed $I$ that $I \subset [a_i, a_{i+1})$ for some $i \in \{0, \ldots k\}$. Then,
+\begin{align*}
+T^{-1}(I) &= \left[\frac{k}{2^i}(a_{i+1} - a_i) + a_i, \frac{k+1}{2^i}(a_{i+1} - a_i) + a_i \right)
+\end{align*}
+
+$T^{-1}(I)$ is an interval for any $I$ and is hence a measurable set. Moreover,
+\begin{align*}
+\lambda(T^{-1}(I)) &= \frac{k+1}{2^i}(a_{i+1} - a_i) + a_i - (\frac{k}{2^i}(a_{i+1} - a_i) + a_i)\\
+&= \frac{k+1}{2^i}a_{i+1} - \frac{k+1}{2^i}a_i - \frac{k}{2^i}a_{i+1} + \frac{k}{2^i}a_i\\
+&= \frac{(k+1)(a_{i+1} - a_i) - k(a_{i+1} - a_i)}{2^i}\\
+&= \frac{((k+1)-k)(a_{i+1} - a_i)}{2^i}\\
+&= \frac{a_{i+1} - a_i}{2^i}
+\end{align*}
+
+Observe that $T$ maps some values onto $I$ for each $T$ defined on the intervals $[a_i, a_{i+1})$. Hence, there will be $k$ such intervals resulting from $I$ with the same length as the above when applying $T^{-1}$.
+
+If we add this up over all intervals $[a_i, a_{i+1})$, we get,
+\begin{align*}
+\frac{a_k - a_0}{2^i} = \frac{1}{2^i} = \lambda(I)
+\end{align*}
+
+as required. Hence, we can apply Theorem 3.4.1 in order to assert that $T$ is then a measure-preserving transformation.
+
+\end{document}
