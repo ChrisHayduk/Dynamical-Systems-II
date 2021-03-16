@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  16 MAR 2021 01:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  16 MAR 2021 16:31
 entering extended mode
 **./homework_5.tex
 (homework_5.tex
@@ -381,49 +381,59 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 71.
+(Font)              <12> on input line 66.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 71.
+(Font)              <8> on input line 66.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 71.
+(Font)              <6> on input line 66.
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
 [1
 
 {C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-[2] [3] (homework_5.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+[3] [4] (homework_5.aux) ) 
 Here is how much of TeX's memory you used:
  4255 strings out of 479334
  58971 string characters out of 2873605
@@ -441,9 +451,9 @@ ic/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/MiKTeX/fonts/typ
 e1/public/lm/lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fo
 nts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on homework_5.pdf (3 pages, 145548 bytes).
+Output written on homework_5.pdf (4 pages, 152637 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

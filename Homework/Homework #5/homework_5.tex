@@ -63,6 +63,45 @@
 \begin{problem}{10}
 \end{problem}
 
+From the textbook, we have that there are infinitely integers $n$ such that $2^n$ starts with a $7$. By a similar argument, we have that, for $d \in \{1, \ldots, 9\}$, we have,
+\begin{align*}
+\log_{10} d \leq n \log_{10} 3 \mod{1} < \log_{10}(d+1)
+\end{align*}
+
+This is the same as saying,
+\begin{align*}
+R_{\alpha}^n(0) \in [\log_{10} d, \log_{10}(d+1))
+\end{align*}
+
+Since $\alpha = \log_{10} 3$ is irrational, by Theorem 3.2.3 there are infinitely many integers $n$ such that $R^n_{\alpha}(0) \in [\log_{10}(d), \log_{10}(d+1))$, and thus there are infinitely many $n$ such that $3^n$ starts with a $7$.\\
+
+Now we want to show that there are infinitely many $n$ such that $2^n$ and $3^n$ both start with a $7$.\\
+
+Observe that if the decimal representation of $2^n$ starts with $d \in \{1, \ldots, 9\}$, then for some integer $k \geq 0$, we have that,
+\begin{align}
+&d \times 10^k \leq 2^n \leq (d+1) \times 10^k \nonumber \\
+\iff &\log_{10} d \leq n \log_{10} 2 \Mod{1} < \log_{10}(d+1)
+\end{align}
+
+Similarly, if the decimal representation of $3^n$ starts with $d \in \{1, \ldots, 9\}$, then for some integer $j \geq 0$, we have that,
+\begin{align}
+&d \times 10^j \leq 3^n \leq (d+1) \times 10^j \nonumber \\
+\iff &\log_{10} d \leq n \log_{10} 3 \Mod{1} < \log_{10}(d+1)
+\end{align}
+
+Then adding these two inequalities yields,
+\begin{align}
+2\log_{10} d \leq n (\log_{10} 3 + \log_{10}(2) \Mod{1}) < 2\log_{10}(d+1)\\
+\iff 2\log_{10} d \leq n \log_{10} 6 \Mod{1} < 2\log_{10}(d+1)
+\end{align}
+
+This is the same as saying that, letting $\alpha = \log_{10}(6)$,
+\begin{align*}
+R_{\alpha}^n(0) \in [2\log_{10}(d), 2\log_{10}(d+1))
+\end{align*}
+
+Since $\alpha = \log_{10}(6)$ is irrational, by Theorem 3.2.3 there are infinitely many integers $n$ such that $R_{\alpha}^n(0) \in [2\log_{10}(d), 2\log_{10}(d+1))$. But note that, for any $n$ that satisfies $(4)$, it must also satisfy $(1)$ and $(2)$. Otherwise, the addition that we used to yield $(3)$ does not hold. Hence, this is equivalent to saying that are infinitely many integers $n$ such that $R_{\beta}^n(0) \in [\log_{10}(d), \log_{10}(d+1))$ and $R_{\gamma}^n(0) \in [\log_{10}(d), \log_{10}(d+1))$, where $\beta = \log_{10}(2)$ and $\gamma = \log_{10}(3)$. Thus, we have that there are infinitely many integers $n$ such that both $2^n$ and $3^n$ start with $7$.
+
 \subsection{Section 3.12}
 
 \begin{problem}{2}
