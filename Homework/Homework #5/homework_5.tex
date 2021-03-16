@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 4}
+
+\author{Chris Hayduk}
+\date{March 16, 2021}
+
+\maketitle
+
+\section{Questions from Silva}
+
+\subsection{Section 3.2}
+
+\begin{problem}{10}
+\end{problem}
+
+\subsection{Section 3.12}
+
+\begin{problem}{2}
+\end{problem}
+
+Let $\Omega$ be the subset $\Sigma^+_3$ consisting of all sequences $x$ that do not have the word $010$ at any place. Suppose that $z$ is a limit point of $\Omega$ that is not contained within the set $\Omega$. That is, since $z$ not in $\Omega$, it has the sequence $010$ starting at position $k$ for some $k \in \mathbb{Z}$ such that $k \geq 0$. Moreover, since $z$ is a limit point of $\Omega$, there is a sequence $(x_n) \in \Omega$ such that for every $\epsilon > 0$, there exists $N > 0$ such that $d(x_N, z) < \epsilon$. However, note that every element $x_j$ in the above sequence does not have the sequence $010$. Thus, for any $j > 0$, we have that,
+\begin{align*}
+d(x_j, z) \geq 2^{-k}
+\end{align*}
+
+Hence, for any $n \in \mathbb{N}$ and any $\epsilon < 2^{-k}$, we have,
+\begin{align*}
+d(x_n, z) \geq 2^k > \epsilon
+\end{align*}
+
+Thus, we have a contradiction and so $z$ must be contained in $\Omega$. Since $z$ was an arbitrary limit point of the set, we must have that $\Omega$ contains all its limit points and is thus closed.
+
+\subsection{Section 3.13}
+
+\begin{problem}{1}
+\end{problem}
+
+Note that alternative definition for density of a set $D \subset \Sigma_N^+$ is that, for every non-empty open set $U \subset \Sigma_N^+$, we have $D \cap U \neq \emptyset$.\\
+ 
+For a point $x \in \Sigma_N^+$ to be periodic, it must be the repetition for some block of symbols in $\{1, \cdots, N-1\}$. That is, there is some $n \in \mathbb{N}$ such that $x_{[0, n-1]} = x_{[n, 2n-1]} = x_{[2n, 3n-1]} = \cdots$.\\
+
+Now fix $y \in \Sigma_N^+$ and fix $\epsilon > 0$. Then consider the set,
+\begin{align*}
+B(y, \epsilon) = \{z \in \Sigma_N^+: d(z, y)\} < \epsilon
+\end{align*}
+
+So for every $z \neq y \in B(y, \epsilon)$, we have $d(z, y) = 1/2^{\min \{i \geq 0: z_i \neq y_i\}} < \epsilon$\\
+
+Now let $k \in \mathbb{N}$ be the smallest natural number such that $1/2^{\min \{i \geq 0: x_i \neq y_i\}} < \epsilon$. Then define the block $y_{[0, k-1]}$ using elements of $y$. Next, define $x_k = y_k + 1 \mod N$. Let $x_y = (y_{[0, k-1]}x_ky_{[0, k-1]}x_ky_{[0, k-1]}x_k\cdots) = (y_0y_1\cdots y_{k-1}x_ky_0y_1\cdots y_{k-1}x_k\cdots)$. Clearly we have,
+\begin{align*}
+d(x_y, y) &= 1/2^k < \epsilon
+\end{align*}
+
+Moreover, we have that $x_{[0, k]} = x_{[k+1, 2k+1]} = x_{[2k+2, 3k+2]} = \cdots$. So we have that,
+\begin{align*}
+\sigma^{k+1}(x) = x
+\end{align*}
+
+Hence, $x$ is a periodic point with period $k+1$.\\
+
+Since $\epsilon > 0$ and $y \in \Sigma_N^+$ were arbitrary, this holds for any $y \in \Sigma_N^+$ with any choice of $\epsilon > 0$. Hence, we have that the set of periodic points of $\sigma$ intersects every non-empty open subset of $\Sigma_N^+$, and so the periodic points of $\sigma$ are dense in $\Sigma_N^+$.\\
+
+
+\begin{problem}{3}
+\end{problem}
+
+First, let us show that $\tau$ is continuous. That is, we want to show that for each $x \in \Sigma_N^+$, we have that for all $\epsilon > 0$, there exists $\delta > 0$ such that $d(\tau(x), \tau(y)) < \epsilon$ whenever $y \in \Sigma_N^+$ and $d(x, y) < \delta$. First let us fix $x \in \Sigma_N^+$ and $\epsilon > 0$. Let $\delta = \epsilon$. Then for any $y \in \Sigma_N^+$ with $d(x, y) < \delta$, we have that the first position where $x \neq y$ is $k$ such that $1/2^k < \delta = \epsilon$. Now let us consider $\tau(x)$ and $\tau(y)$. Since the first $k-1$ terms in $x$ and $y$ are the same, the modulo addition and carrying over process must be exactly the same on these $k-1$ terms. Hence, we have that $$d(\tau(x), \tau(y)) < 1/2^k < \epsilon$$ Hence, since $x$ and $\epsilon$ were arbitrary and $y$ was an arbitrary point with distance less than $\delta$ from $x$, we have that $\tau$ is continuous.\\
+
+Recall that $\tau: \Sigma_N^+ \to \Sigma_N^+$ is minimal if the positive orbit $\{\tau^n(x)\}_{n \geq 0}$ is dense in $\Sigma_N^+$ for all $x \in \Sigma_N^+$. Let us fix $x \in \Sigma_N^+$ and consider some arbitrary $y \in \Sigma_N^+$ such that $y \neq x$. Then there exists some $k \in \mathbb{Z}$ such that $k \geq 0$ and $x_k \neq y_k$. Now fix some $\epsilon > 0$ and consider the set,
+\begin{align*}
+B(y, \epsilon) = \{z \in \Sigma_N^+: d(z, y)\} < \epsilon
+\end{align*}
+
+So for every $z \neq y \in B(y, \epsilon)$, we have $d(z, y) = 1/2^{\min \{i \geq 0: z_i \neq y_i\}} < \epsilon$. If we fix $j$ to be the smallest integer such that $1/2^j < \epsilon$, then we need to apply $\tau$ enough times until the distance between $y$ and the iterated image of $x$ is $1/2^j$. That is, the first difference between $y$ and the iterated image of $x$ must be at position $j$.\\
+
+Observe that, since the addition is modulo $N$, the first digit $x_0$ is periodic with period $N$. The second digit $x_1$ is periodic with period $N^2$, and so on. Hence, let us apply $\tau$ until $x_0 = y_0$ and then fix that ``cycle'' around that point. Next let us, apply $\tau$ until $x_1 = y_1$ and cycle around $x_0x_1$. Let us continue this process until we have that $x_j = y_j$ and cycle until $x_0x_1\cdots x_{j-1} = y_0y_1 \cdots y_{j-1}$ as well. Then we have that,
+\begin{align*}
+d(\tau^m(x), y) < 1/2^j < \epsilon
+\end{align*}
+
+for some $m \in \mathbb{N}$. Hence, the forward orbit of $x$ is dense in $\Sigma_N^+$. Since $x$ was arbitrary, this hold for every $x \in \Sigma_N^+$ and so $\tau$ is minimal.
+\end{document}
