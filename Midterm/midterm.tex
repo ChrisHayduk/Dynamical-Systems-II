@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Midterm}
+
+\author{Chris Hayduk}
+\date{March 25, 2021}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Let $$T(x) = \begin{cases} 
+      \sqrt{x} & x < \frac{1}{4} \\
+      \frac{1}{2} - \sqrt{\frac{1}{2} - x} & x \geq 4
+   \end{cases}$$
+   
+Note then that,
+$$T^{-1}(x) = \begin{cases} 
+      x^2 & x < \frac{1}{4} \\
+      -x^2+x+\frac{1}{4} & x \geq \frac{1}{4}
+   \end{cases}$$
+   
+In addition, note that for $x \in [0, \frac{1}{4})$, we have $T(x) \in [0, \frac{1}{2})$ and for $x \in [\frac{1}{4}, \frac{1}{2})$, we have $T(x) \in [0, \frac{1}{2})$. Thus, for any $y$ in the image of $T$, we will need to consider two pre-images under the inverse function $T^{-1}(x)$.\\
+
+Now let $\mathcal{C}$ be the set of intervals in $[0, \frac{1}{2})$. This is a sufficient semi-ring for the domain. Let us fix some interval $I$ with endpoints $a, b \in \mathcal{C}$ with $b \geq a$ (whether it is open or closed will not change its Lebesgue measure). We will assume the interval is open for now. Then,
+\begin{align*}
+\lambda(I) = b - a
+\end{align*}
+
+Now let us consider $T^{-1}(I)$. We have two inverse images to consider,
+\begin{align*}
+T_1^{-1}(I) &= (a^2, b^2) 
+\end{align*}
+
+and,
+\begin{align*}
+T_2^{-1}(I) &= (-a^2+a+\frac{1}{4}, -b^2+b+\frac{1}{4})
+\end{align*}
+
+Note that the inverse of $T$ preserves the interval structure, so $T^{-1}(I)$ is a measurable set.\\
+
+Now let us check $\lambda(T^{-1}(I))$. We have,
+\begin{align*}
+\lambda(T^{-1}(I)) &= \lambda(T_1^{-1}(I)) + \lambda(T_2^{-1}(I))\\
+&= b^2 - a^2 + (-b^2+b+\frac{1}{4} - (-a^2+a+\frac{1}{4}))\\
+&= b^2 - a^2 - b^2 + b + \frac{1}{4} + a^2 - a - \frac{1}{4}\\
+&= b - a\\
+&= \lambda(I)
+\end{align*}
+
+Hence, by Theorem 3.4.1, $T$ is measure preserving.
+
+\begin{problem}{2}
+\end{problem}
+We have that $T$ is continuous and measure preserving and that $f$ is continuous and $f(T(x)) \geq f(x)$.\\
+
+Now suppose $T$ is recurrent. Then for every measurable set $A$ of positive measure, there is a null set $N \subset A$ such that for all $x \in A \setminus N$ there is an integer $n = n(x) > 0$ with $T^n(X) \in A$.\\
+
+Fix $x_0 \in \mathbb{R}^2$ and suppose $f(T(x_0)) > f(x_0)$. Since $f, T$ are continuous, for points $x_1$ near $x_0$, we would expect to see $f(T(x_1)) > f(x_1)$ as well.
+
+
+\begin{problem}{3}
+\end{problem}
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Let $C_{m,n}$ be the set of points $x \in X$ for which $m$ and $n$ are consecutive visit times to $A$. Suppose $C_{m,n}$ is not measurable. Then $C_{m, n} \not\in \mathcal{S}$. But since $T$ is measurable and $T^{-1}(T^{m+1}(X)) = T^m(X) \in \mathcal{S}$. Furthermore, since $A$ measurable, we must have $A \cap T^m(X)$ is measurable as well. The same applies to $T{-1}(T^{n+1}(X)) = T^n(x)$. Hence, $A \cap T^n(X)$ is measurable as well. Then we have that $$A \cap T^n(X) \cup A \cap T^m(X)$$ must be measurable. Finally, we have,
+\begin{align*}
+A \cap T^m(X) \cup A \cap T^n(X) \setminus \left( \bigcup_{i=1}^{n-m} T^{m+i}(X) \cap A \right)
+\end{align*}
+
+is measurable since we are taking a finite union of measurable sets and then set minusing this finite union from another measurable set. However, note that this is exactly $C_{m,n}$, and so $C_{m,n}$ is measurable.
+
+\item Now let us take $C_{m,n}$ and define the following set:
+\begin{align*}
+C_{m,n} \cap \left( \bigcup_{i=1}^{n-m-1} T^{m+i}(X) \cap B \right)
+\end{align*}
+
+That is, we have taken the intersection of $C_{m,n}$ with the union of the set of points in $X$ such that $T^i(X) \in B$ for some $i$ with $m < i < n$. Note that, by the same arguments as above $T^{m+i}(X) \cap B$ is measurable for every $i$. Furthermore, we are taking a finite union of measurable sets, so $\bigcup_{i=1}^{n-m-1} T^{m+i}(X) \cap B$ is measurable as well. And lastly, $C_{m,n}$ is measurable by (a), so 
+
+\begin{align*}
+D_{m,n} = C_{m,n} \cap \left( \bigcup_{i=1}^{n-m-1} T^{m+i}(X) \cap B \right)
+\end{align*}
+
+is measurable.
+
+\item We have that $x \in E$ if and only if $x \in C_{m,n}$ implies $x \in D_{m,n}$ for all integers $m$ and $n$ with $0 \leq m < n$. That is,
+
+
+\end{enumerate}
+
+\begin{problem}{4}
+\end{problem}
+
+Let us show that $T$ is continuous. That is, we want to show that for each $x \in \Sigma_2^+$, we have that for all $\epsilon > 0$, there exists $\delta > 0$ such that $d(T(x), T(y)) < \epsilon$ whenever $y \in \Sigma_2^+$ and $d(x, y) < \delta$. First let us fix $x \in \Sigma_2^+$ and $\epsilon > 0$. Let $m$ be the length of the initial constant sequence in $x$. Let $\delta = \frac{1}{2^m}\epsilon$. Then for any $y \in \Sigma_2^+$ with $d(x, y) < \delta$, we have that the first position where $x \neq y$ is some $k$ such that 
+\begin{align*}
+&1/2^k < \delta = \frac{1}{2^m}\epsilon\\
+\implies &2^m2^{-k} < \epsilon\\
+\implies &2^{m-k} < \epsilon\\
+\implies &1/2^{k-m} < \epsilon
+\end{align*}
+
+That is, after removing the first $m$ elements of $x$ and $y$ (call these new elements $x'$, $y'$), we still have that $d(x', y') < \epsilon$. Now note that $T(x)$ will remove exactly the first $m$ elements. Since $k \geq m$ and $x_i = y_i$ for all $0 \leq i \leq k - 1$, we thus also have that $T(y)$ removes exactly the first $m$ elements of $y$. Hence, by what we have just shown, for any fixed $x \in \Sigma_2^+$ and $\epsilon > 0$, we have that for all $y \in B(x, \delta)$, $T(y) \in B(T(x), \epsilon)$. Thus, $T$ is continuous.
+
+
+\end{document}

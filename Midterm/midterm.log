@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  25 MAR 2021 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  25 MAR 2021 19:43
 entering extended mode
-**./homework_5.tex
-(homework_5.tex
+**./midterm.tex
+(midterm.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> xparse <2020-03-03>
 (C:\MiKTeX\tex/latex/base\article.cls
@@ -256,7 +256,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 50
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 47
 .
  (C:\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -265,23 +265,23 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box51
-) (homework_5.aux)
-\openout1 = `homework_5.aux'.
+) (midterm.aux)
+\openout1 = `midterm.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -336,124 +336,100 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
-7.
+4.
 
 (C:\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-7.
+4.
  (C:\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-57.
+54.
 
 (C:\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-57.
+54.
  (C:\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 57.
+(Font)              <14.4> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 57.
+(Font)              <10> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 57.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+(Font)              <7> on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
 
 
 (C:\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
 
  (C:\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 54
 .
 
 (C:\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 66.
+(Font)              <12> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 66.
+(Font)              <8> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 66.
+(Font)              <6> on input line 59.
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
 [1
 
 {C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
-
- []
-
-[3] [4] (homework_5.aux) ) 
+[2] [3] (midterm.aux) ) 
 Here is how much of TeX's memory you used:
- 4255 strings out of 479334
- 58971 string characters out of 2873605
- 366182 words of memory out of 3000000
- 21632 multiletter control sequences out of 15000+200000
- 450813 words of font info for 73 fonts, out of 3000000 for 9000
+ 4254 strings out of 479334
+ 58906 string characters out of 2873605
+ 364153 words of memory out of 3000000
+ 21631 multiletter control sequences out of 15000+200000
+ 441802 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,74p,931b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTe
-X/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
-MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/MiKTeX/fonts/type1/public/lm/lmbx12.pfb
-><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/public/lm/l
-mmi6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/MiKTeX/fonts/type1/publ
-ic/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/MiKTeX/fonts/typ
-e1/public/lm/lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fo
-nts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb>
-Output written on homework_5.pdf (4 pages, 152822 bytes).
+ 68i,9n,74p,562b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTeX/f
+onts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/MiK
+TeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C
+:/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmex
+10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/publi
+c/lm/lmmi6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/MiKTeX/fonts/type
+1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/MiKTeX/fon
+ts/type1/public/lm/lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/MiK
+TeX/fonts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb>
+Output written on midterm.pdf (3 pages, 145976 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
