@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 8}
+
+\author{Chris Hayduk}
+\date{April 22, 2021}
+
+\maketitle
+
+\section{Questions from Silva}
+
+\subsection{Section 3.11}
+
+\begin{problem}{3}
+\end{problem}
+
+
+\subsection{Section 4.2}
+
+\begin{problem}{3}
+\end{problem}
+
+Suppose $A$ is measurable and consider $\mathbb{I}_A$. Observe that $\mathbb{I}_A(x) = 1$ if $x \in A$ and $\mathbb{I}_A(x) = 0$ if $x \not\in A$. Then we must have that,
+\begin{align*}
+\{x \in X \ : \ \mathbb{I}_A(x) > 0\} = A
+\end{align*}
+
+Hence, this set must be measurable and thus, by Proposition 4.2.1, we have that $\mathbb{I}_A$ is measurable.\\
+
+Now suppose $\mathbb{I}_A$ is measurable. Then again by Proposition 4.2.1, we can say that $\{x \in X \ : \ \mathbb{I}_A(x) > 0\}$ is measurable. Since this set is equal to $A$ by the definition of $\mathbb{I}_A$, we must have that $A$ is measurable as well.
+
+\begin{problem}{5}
+\end{problem}
+
+\begin{problem}{6}
+\end{problem}
+
+Suppose that $f$ is Lebesgue measurable. Then, by Proposition 4.2.1 and Lemma 4.2.2, the inverse image under $f$ of any interval is a measurable set. Now fix $G \in \mathbb{R}$ such that $G$ is an open set. Since every open subset of $\mathbb{R}$ is a countable union of disjoint open intervals, we have that $G = \sqcup_{k=1}^{\infty} I_k$ for some disjoint open intervals $I_k$. Now note that disjoint set in a function's image must have disjoint preimages. Otherwise, there would be an $x$ such that $f(x)$ has two outputs, which is not possible for a validly defined function. Hence, we must have that,
+\begin{align*}
+f^{-1}(G) &= f^{-1}\left(\sqcup_{k=1}^{\infty} I_k \right)\\
+&= \sqcup_{k=1}^{\infty} f^{-1}(I_k)
+\end{align*}
+
+Since each $I_k$ is an interval, we have that $f^{-1}(I_k)$ is measurable. And since the countable union of measurable sets is measurable, we have that $f^{-1}(I_k) = f^{-1}(G)$ is measurable, as required.\\
+
+Now suppose $f^{-1}(G)$ is measurable for every open set $G \subset \mathbb{R}$. Then, in particular, the preimage of every open interval in $\mathbb{R}$ is measurable. Hence, $$\{x \in X \ : \ f(x) < a\}$$ is measurable for all $a \in \mathbb{R}$ and so $f$ is measurable.
+
+\begin{problem}{7}
+\end{problem}
+
+\begin{problem}{8}
+\end{problem}
+
+\begin{problem}{9}
+\end{problem}
+
+Suppose that $f$ is a Lebesgue measurable function. Then by Proposition 4.2.1, we have that $$\{x \in X \ : \ f(x) \geq a\}$$ and $$\{x \in X \ : \ f(x) \leq a\}$$ are both measurable sets for any $a \in \mathbb{R}$. Since the Lebesgue measurable sets form a sigma algebra, we can take the intersection of these sets and still have a measurable set. This gives us that,
+\begin{align*}
+\{x \in X \ : \ f(x) \geq a\} \cap \{x \in X \ : \ f(x) \leq a\} &= \{x \in X \ : \ f(x) = a\}
+\end{align*}
+
+is measurable for every $a \in \mathbb{R}$, as required.
+
+\begin{problem}{10}
+\end{problem}
+
+\end{document}

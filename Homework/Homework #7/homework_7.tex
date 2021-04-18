@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 7}
+
+\author{Chris Hayduk}
+\date{April 13, 2021}
+
+\maketitle
+
+\section{Questions from Silva}
+
+\subsection{Section 3.7}
+
+\begin{problem}{2}
+\end{problem}
+
+Observe that the only $T$-invariant subset of $X$ is $X$ itself. Suppose we have a subset $A$ of $X$ such that $A \neq X$. Then there exists $a_j \in X$ such that $a_{(j+1) \text{ mod } n} \not\in A$ and hence, $T(a_j) \not\in A$. Thus $A$ is not $T$-invariant. Hence, we must have $A = X$. But $A^C = X^C = \emptyset$. So $\mu(A^C) = 0$ whenever $A$ is $T$-invariant, and so $T$ is ergodic.
+
+\begin{problem}{3}
+\end{problem}
+
+Suppose $T$ is a totally ergodic measure-preserving transformation and suppose that $T$ is invertible. Since $T$ is ergodic, observe that $\mu(A) = 0$ or $\mu(A^C) = 0$ for any $T$-invariant set $A$. Now fix a $T$-invariant set $A$ and suppose $\mu(A) = 0$. Since $T$ is measure-preserving, we have that if $\mu(A) = 0$, then $\mu(T^{-1}(A)) = 0$.\\
+
+For $T^{-2}(A)$, observe that we have $$T^{-2}(A) = T^{-1}(T^{-1}(A)) = T^{-1}(B)$$ where $B = T^{-1}(A)$, a measure $0$ set. Again, since $T$ is measure-preserving and $\mu(B) = 0$, we have that $\mu(T^{-1}(B)) = \mu(T^{-2}(A)) = 0$. Proceeding inductively, we get that if $\mu(A) = 0$, then $\mu(T^{n}(A)) = 0$ for all $n < 0$. Moreover, if $A$ is $T$-invariant, then $A$ is also $T^{-1}$-invariant, since $T$ is invertible. This again applies for $T^n$ with any $n < 0$, so we have that
+
+\begin{problem}{6}
+\end{problem}
+
+Recall the the two dimensional Baker's transformation is defined as 
+\begin{align*}
+T(x, y) = \begin{cases}
+(2x, \frac{y}{2}), \ \text{ if } 0 \leq x < 1/2\\
+(2x-1, \frac{y+1}{2}), \ \text{ if } 1/2 \leq x \leq 1
+\end{cases}
+\end{align*}
+
+For any subset $A$ of $[0,1] \times [0,1]$, we have that $\mu(A) = $
+
+\subsection{Section 3.10}
+
+\begin{problem}{1}
+\end{problem}
+
+\begin{problem}{3}
+\end{problem}
+
+\begin{problem}{4}
+\end{problem}
+
+\begin{problem}{6}
+\end{problem}
+
+
+\end{document}
