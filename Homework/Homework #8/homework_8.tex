@@ -61,6 +61,9 @@
 \subsection{Section 3.11}
 
 \begin{problem}{3}
+Revised problem: Let $(X, \mathcal{S}, \mu, T)$ be an invertible, recurrent, finite measure-preserving dynamical system. If $A$ is a set of positive measure such that the transformation $T_A$ is ergodic on $A$ and $\mu(X \setminus \cup_{n \geq 0} T^{-n}(A)) = 0$, then $T$ is ergodic.\\
+
+Note: $X \setminus \cup_{n \geq 0} T^{-n}(A)$ is the set of points that never hit $A$.
 \end{problem}
 
 
@@ -81,6 +84,43 @@ Now suppose $\mathbb{I}_A$ is measurable. Then again by Proposition 4.2.1, we ca
 \begin{problem}{5}
 \end{problem}
 
+Note that $f^{-1}(A \cup B) = \{x \in X: f(x) \in A \cup B\}$. But note that $f(x) \in A \cup B$ is the same as $f(x) \in A$ or $f(x) \in B$ (inclusive or). Hence we have that,
+\begin{align*}
+f^{-1}(A \cup B) &= \{x \in X: f(x) \in A \cup B\}\\
+&= \{x \in X: f(x) \in A \text{ or } f(x) \in B\}\\
+&= \{x \in X: f(x) \in A\} \cup \{x \in X: f(x) \in B\}\\
+&= f^{-1}(A) \cup f^{-1}(B)
+\end{align*}
+
+Now consider $f^{-1}(A \cap B)$. We have that,
+\begin{align*}
+f^{-1}(A \cap B) &= \{x \in X: f(x) \in A \cap B\}\\
+&= \{x \in X: f(x) \in A \text{ and } f(x) \in B\}\\
+&= \{x \in X: f(x) \in A\} \cap \{x \in X: f(x) \in B\}\\
+&= f^{-1}(A) \cap f^{-1}(B)
+\end{align*}
+
+Lastly, consider $f^{-1}(\mathbb{R} \setminus A)$. We have that,
+\begin{align*}
+f^{-1}(\mathbb{R} \setminus A) &= \{x \in X: f(x) \in \mathbb{R} \setminus A\}\\
+&= \{x \in X: f(x) \in A^c\}
+\end{align*}
+
+Note that the final line in the aboe is the set of $x$ in $X$ that map to $A^c$ in $\mathbb{R}$. In other words, it is the complement of the set of points that map to $A$ in $\mathbb{R}$. Hence, we have,
+\begin{align*}
+\{x \in X: f(x) \in A^c\} &= \{x \in X: f(x) \in A\}^c\\
+&= f^{-1}(A)^c\\
+&= X \setminus f^{-1}(A)
+\end{align*}
+
+as required.\\
+
+Now consider $f(A \cup B)$. Let $x \in f(A \cup B)$. Then $x \in \{y \in \mathbb{R}: f^{-1}(y) \in A \cup B)$. Thus, $x \in A$ or $x \in B$, or both. That is, $x \in \{y \in \mathbb{R}: f^{-1}(y) \in A)$ or $x \in \{y \in \mathbb{R}: f^{-1}(y) \in A)$ or both. Hence, we have that $f(A \cup B) \subset f(A) \cup f(B)$. Now fix $x \in f(A) \cup f(B)$. Then $f^{-1}(x) \in A$ or $f^{-1}(x) \in B$. But this is exactly the definition of $f(A \cup B)$ and so $x \in f(A \cup B)$. Thus, $f(A) \cup B \subset f(A \cup B)$ and hence, $f(A \cup B) = f(A) \cup f(B)$.\\
+
+For $f(A \cap B)$, let us use a counterexample. Consider $f(x) = x^2$ and $A = [-1, 0]$, $B = [0,1]$. Then $f(A \cap B) = f(\{0\}) = 0$, but $f(A) \cap f(B) = [0, 1] \cap [0,1] = [0, 1]$. Hence, these are not equal and this does not hold.\\
+
+Lastly, consider $f(X \setminus A)$. Again let us use $f(x) = x^2$ as a counterexample with $X = \mathbb{R}$ and $A = (0,1]$. Then $f(X \setminus A) = \mathbb{R}$. However, $f(X) \setminus A = \mathbb{R} \setminus [0, 1]$. Hence, these are not equal and so this does not hold.
+
 \begin{problem}{6}
 \end{problem}
 
@@ -97,8 +137,38 @@ Now suppose $f^{-1}(G)$ is measurable for every open set $G \subset \mathbb{R}$.
 \begin{problem}{7}
 \end{problem}
 
+Suppose $g: \mathbb{R} \to \mathbb{R}$ is Lebesgue measurable and $f: \mathbb{R} \to \mathbb{R}$ is continuous. We want to show that $f \circ g = f(g(x))$ is Lebesgue measurable.\\
+
+Note that $\mathbb{R}$ is a metric space and $f$ is continuous on $\mathbb{R}$. Hence, by Lemma 4.2.3, $f$ is Lebesgue measurable as well. Now fix $B \in \mathcal{B}(\mathbb{R})$. We have that,
+\begin{align*}
+(f \circ g)^{-1}(B) &= g^{-1}(f^{-1}(B))
+\end{align*} 
+
+We have that $f^{-1}(B) \in \mathcal{L}(\mathbb{R})$ since $f$ is Lebesgue measurable. We need to use the continuity of $f$ to show that $f^{-1}(B)$ is Borel.\\
+
+A Borel set is any set that can be formed from open sets through the operations of countable union, countable intersection, and complement. The inverse images of open sets under a continuous function are open sets and inverse images of a countable union is the countable union of the inverse images. The same notions hold true for complements and countable intersections. Hence, we can write $f^{-1}(B)$ as an expression of open sets through countable unions, countable intersections, and complements.\\
+
+Hence, $f^{-1}(B)$ is a Borel set and so $g^{-1}(f^{-1}(B))$ is Lebesgue measurable, and so we have that $f \circ g$ is measurable, as required.
+
 \begin{problem}{8}
 \end{problem}
+
+Suppose $f, g: \mathbb{R} \to \mathbb{R}$ are Lebesgue measurable and $g$ is such that for all null sets $N$, $g^{-1}(N)$ is measurable. We want to show that $f \circ g = f(g(x))$ is Lebesgue measurable.\\
+
+Fix $B \in \mathcal{B}(\mathbb{R})$. We have that,
+\begin{align*}
+(f \circ g)^{-1}(B) &= g^{-1}(f^{-1}(B))
+\end{align*} 
+
+We have that $f^{-1}(B) \in \mathcal{L}(\mathbb{R})$ since $f$ is Lebesgue measurable. We need to use the property of $g$ to show that $g^{-1}(f^{-1}(B))$ is measurable.\\
+
+Since $f^{-1}(B)$ is measurable, then there exists a $G_{\delta}$ set $G^*$ and a null set $N$ such that $f^{-1}(B) = G^* \setminus N = G^* \cap N^C$. Note that $G^*$ is a countable intersection of open sets, and hence is Borel. Hence, we have from Problem 5 that,
+\begin{align*}
+g^{-1}(f^{-1}(B)) &= g^{-1}(G^* \cap N^C)\\
+&= g^{-1}(G^*) \cap g^{-1}(N)^C
+\end{align*}
+
+Since $G^*$ is a Borel set, we have that $g^{-1}(G^*)$ is measurable and since $N$ is a null set, we have that $g^{-1}(N)^C$ is measurable. Thus, we have that $g^{-1}(f^{-1}(B))$ is a finite intersection of measurable sets and hence is measurable. As a result, $f \circ g$ is Lebesgue measurable.
 
 \begin{problem}{9}
 \end{problem}
