@@ -1,0 +1,198 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 9}
+
+\author{Chris Hayduk}
+\date{April 29, 2021}
+
+\maketitle
+
+\section{Questions from Silva}
+
+\subsection{Section 4.3}
+
+\begin{problem}{1}
+\end{problem}
+
+Suppose $s_1$ and $s_2$ are simple function with $s_1 = s_2$ a.e. Let $E$ be the set of measure $0$ where $s_1 \neq s_2$. Observe that,
+\begin{align*}
+\int s_1 d\mu &= \sum_{i=1}^n a_{i} \mu(A_i)\\
+&= \sum_{i=1}^n a_{i} \mu(A_i \setminus E) + a \mu(E)\\
+&= \sum_{i=1}^n a_{i} \mu(A_i \setminus E) + a \cdot 0\\
+&= \sum_{i=1}^n a_{i} \mu(A_i \setminus E)
+\end{align*}
+and,
+\begin{align*}
+\int s_2 d\mu &= \sum_{i=1}^m b_{i} \mu(B_i)\\
+&= \sum_{i=1}^m b_{i} \mu(B_i \setminus E) + b \mu(E)\\
+&= \sum_{i=1}^m b_{i} \mu(B_i \setminus E) + a \cdot 0\\
+&= \sum_{i=1}^m b_{i} \mu(B_i \setminus E)
+\end{align*}
+
+But observe that $\cup_{i=1}^n A_i \setminus E = \cup_{i=1}^m B_i \setminus E = X \setminus E$ and, by definition, $s_1 = s_2$ everywhere on this set. Since we are integrating the same function on the same set, we must have that $\int s_1 d \mu = \int s_2 d \mu$.
+\newpage
+
+\begin{problem}{3}
+\end{problem}
+
+Suppose $s$ is a nonnegative simple function. Suppose $\int_X s d\mu = 0$. Then,
+\begin{align*}
+\int_x s d\mu &= \sum_{i=1}^n \alpha_i \mu(E_i)\\
+&= 0
+\end{align*}
+
+Since $s \geq 0$, we have that $\alpha_i \geq 0$ for all $i$. Moreover, we have that $\mu(E_i) \geq 0$ for all $i$ by properties of measure. Thus, in order for this sum to equal 0, we must have that $\alpha_i \mu(E_i) = 0$ for all $i$. Note that if $\mu(E_i) = 0$ for all $i$, then $\mu(X) = 0$. Hence, even if $s > 0$ on all of $X$, it is vacuously true that $s = 0$ a.e. since the whole space is measure $0$. So let us assume that at least one $E_i$ has positive measure. If $\alpha_i \mu(E_i) > 0$ for this $i$, then 
+$\sum_{i=1}^n \alpha_i \mu(E_i) > 0$, a contradiction. Hence, for every set $E_i$ of positive measure, we must have that $s = 0$. Thus, $s = 0$ a.e. in $X$.\\
+
+Now let us assume $s = 0$ a.e. in $X$. Then we have that there is a set $E$ with $\mu(E) = 0$ such that $s > 0$ on $E$ and $s = 0$ on $X \setminus E$. Since $s = 0$ a.e. and $0$ is a simple function (with every coefficient $\alpha_i$ set to $0$), we can apply Exercise 1 and state that we must have,
+\begin{align*}
+\int_X s d \mu &= \int_X 0 d\mu\\
+&= \sum_{i=1}^n 0 \cdot \mu(A_i)\\
+&= 0
+\end{align*}
+
+as required.
+
+\subsection{Section 4.4}
+
+\begin{problem}{2}
+\end{problem}
+
+Let $f$ be a nonnegative measurable function and let $A$ be a measurable set. Suppose $\int_A f \ d\mu = 0$. Then, $$\int_A f \ d\mu = \sup \{ \int_A s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\} = 0$$. Since the supremum of this set is $0$ and every nonnegative simple function has a nonnegative integral, then for any $s$ in the above set, we must have that,
+\begin{align*}
+\int_A s \ d\mu &= \sum_{i=1}^n a_i\mu(A_i)\\
+&= 0
+\end{align*}
+
+By Section 4.3 Problem 3, we thus have that $s = 0$ a.e. in $A$. Since $s$ was arbitrary, this holds for every $s$ in the above set. Let us suppose that it is not the case that $f = 0$ a.e. That is, there is a set of positive measure where $f > 0$. Then there would be a simple function $s$ with $0 \leq s \leq f$ such that $s > 0$ on this set as well and hence it would not be the case that $s = 0$ a.e., a contradiction. Hence, we must have that $f = 0$ a.e.\\
+
+Now suppose that $f = 0$ a.e. Then there is a set $E$ of measure 0 such that $f = 0$ everywhere on $A \setminus E$. Fix a simple function $s$ on $A$ such that $0 \leq s \leq f$. For this to hold, we must have that $s = 0$ on $A \setminus E$. We can have that $0 < s \leq f$ on $E$, but note that $\mu(E) = 0$. Thus,
+\begin{align*}
+\int_A s &= \sum_{i=1}^n a_i \ \mu(A_i)\\
+&= \sum_{i=1}^n a_i \ \mu(A_i \setminus E) + \sum_{i=1}^m e_i \ \mu(E_i)\\
+&= \sum_{i=1}^n a_i \ \mu(A_i \setminus E)\\
+&= 0
+\end{align*}
+
+where $\cup E_i = E$ (note since $E_i \subset E$ we have $\mu(E_i) \leq \mu(E)$ and since measure is nonnegative and $\mu = 0$, we get $\mu(E_i) = 0$).\\
+
+Since $s$ was arbitrary on $A$ with the property $0 \leq s \leq f$, this must hold for every element of the set $\{ \int_A s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}$. Thus, $\int_A s = 0$ for every element $s$ in the set and so,
+\begin{align*}
+\int_A f \ d\mu &= \sup \{ \int_A s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}\\
+&= 0
+\end{align*}
+
+as required.
+
+\begin{problem}{3}
+\end{problem}
+
+Suppose $f$ is a nonnegative measurable function and let $A, B$ be measurable sets with $A \subset B$. We have that $$\int_A f = \sup \{ \int_A s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}$$ and $$\int_B f = \sup \{ \int_B s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}$$
+
+Observe that for every $s$ in the set $\{ \int_B s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}$, we can write,
+\begin{align*}
+\int_B s &= \sum_{i=1}^n b_n \mu(B_i)\\
+&= \sum_{i=1}^n b_i \mu(B_i \setminus A) + \sum_{i=1}^m a_i \mu(A_i)\\
+&= \int_{B \setminus A} s + \int_{A} s
+\end{align*}
+
+where $\cup A_i = A$. Since the integral of any nonnegative simple function is nonnegative, we must have from the above that $\int_B s \geq \int_A s$. Observe that every element of $\{ \int_A s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}$ can be extended to a simple function on $B$ by taking $s = 0$ on $B \setminus A$, so we have $\{ \int_A s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\} \subset \{ \int_B s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}$. Moreover, as we have shown above, if $\int_{B \setminus A} > 0$, then $\int_B s > \int_A s$. Thus, we must have that,
+\begin{align*}
+\sup \{ \int_A s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\} \leq \sup \{ \int_B s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}
+\end{align*}
+
+and so, $$\int_A f \leq \int_B f$$ as required.
+
+\begin{problem}{4}
+\end{problem}
+
+Let $f$ be a nonnegative measurable function and $\{A_j\}$ be a sequence of disjoint measurable sets. We have,
+\begin{align*}
+\int_{\sqcup A_j} f \ d\mu = \sup \{ \int_{\sqcup A_j} s \ d\mu: s \text{ is simple and } 0 \leq s \leq f\}
+\end{align*}
+
+Fix $s$ in the above set. Then,
+\begin{align*}
+\int_{\sqcup A_j} s &= \sum_{i=1}^n b_i \ \mu(B_i)
+\end{align*}
+
+for some sets $B_i$ such that $\cup B_i = \sqcup A_j$. However, we could alternatively divide up $\sqcup A_j$ so that each subset in our sum corresponds to only one $A_j$. That is, we can write,
+\begin{align*}
+\int_{\sqcup A_j} s &= \sum_{j=1} \sum_{i=1}^n a_{ji} \ \mu(A_{ji})\\
+&= \sum_{i=1}^n a_{1i} \ \mu(A_{1i}) + \sum_{i=1}^n a_{2i} \ \mu(A_{2i}) + \cdots\\
+&= \int_{A_1} s + \int_{A_2} s + \cdots
+\end{align*}
+
+Now note that $\int_{A_i} s$ is contained in the above set for any $i$ because we can set $\int_{A_j} s = 0$ for any $j \neq i$ and maintain its status as a simple function. Hence,
+\begin{align*}
+\int_{\sqcup A_i} f \ d\mu = \sum_j \int_{A_j} f \ d\mu
+\end{align*}
+
+\newpage
+\begin{problem}{5}
+\end{problem}
+
+Consider $$f_n(x)=\begin{cases}\boldsymbol 1_{[0,1/2]}(x)&n\ \text{odd}\\ \boldsymbol 1_{[1/2,1]}(x)&n\ \text{even}\end{cases}$$ Observe that $\liminf_{n \to \infty} f_n(x) = 0$. Thus,
+\begin{align*}
+\int \liminf_{n \to \infty} f_n(x) d \mu &= \int 0 d\mu\\
+&= 0
+\end{align*}
+
+Now note that $\int f_n d\mu = \frac{1}{2}$ for all $n$. Thus,
+\begin{align*}
+\liminf_{n \to \infty} \int f_n d\mu &= \liminf_{n \to \infty} \frac{1}{2}\\
+&= \frac{1}{2}
+\end{align*}
+
+Thus, we have that $\int \liminf_{n \to \infty} f_n(x) d \mu < \liminf_{n \to \infty} \int f_n d\mu$ as required.
+
+\end{document}
