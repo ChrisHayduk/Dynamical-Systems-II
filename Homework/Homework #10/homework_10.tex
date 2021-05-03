@@ -1,0 +1,233 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 10}
+
+\author{Chris Hayduk}
+\date{May 4, 2021}
+
+\maketitle
+
+\section{Questions from Silva}
+
+\subsection{Section 4.6}
+
+\begin{problem}{2}
+\end{problem}
+
+Observe that $|f|$ is defined as,
+\begin{align*}
+|f| &= \begin{cases}
+f(x) & \text{if } f(x) \geq 0\\
+-f(x) & \text{if } f(x) < 0
+\end{cases}
+\end{align*}
+
+In addition, we have,
+
+\begin{align*}
+f^+ &= \begin{cases}
+f(x) & \text{if } f(x) \geq 0\\
+0 & \text{if } f(x) < 0
+\end{cases}
+\end{align*}
+
+and,
+\begin{align*}
+f^- &= \begin{cases}
+-f(x) & \text{if } f(x) \leq 0\\
+0 & \text{if } f(x) > 0
+\end{cases}
+\end{align*}
+
+Now let us consider $f^+(x) + f^-(x)$ for 3 cases: when $f(x) > 0$, when $f(x) = 0$, and when $f(x) < 0$. When $f(x) > 0$, we have that $f^+(x) = f(x)$ and $f^-(x) = 0$. Hence, $f^+(x) + f^-(x) = f(x)$ in this case, just as in the case of $|f|$. Now suppose $f(x) = 0$. Then $f^+(x) = 0$ and $f^-(x) = 0$, so $f^+(x) + f^-(x) = 0$. Again, $|f(x)| = 0$ when $f(x) = 0$, so they coincide in this case as well. Now suppose $f(x) < 0$. Then $f^+(x) = 0$ and $f^-(x) = -f(x)$. Thus, $f^+(x) + f^-(x) = -f(x)$. This is precisely the same as $|f|$. Hence, in all 3 possible cases for $f(x)$, we have that $f^+ + f^-$ coincides with $|f|$, and so $f^+ + f^- = |f|$.
+
+\newpage
+\begin{problem}{3}
+\end{problem}
+
+Suppose $f$ is integrable. Then $\int f^+ d\mu < \infty$ and $\int f^- d\mu < \infty$. Hence, $\int f^+ d\mu + \int f^- d\mu < \infty$. By Lemma 4.6.2 Part 2, we have that,
+\begin{align*}
+\int f^+ d\mu + \int f^- d\mu &= \int (f^+ + f^-) d\mu\\
+&< \infty
+\end{align*}
+
+By Exercise 2, we thus have that,
+\begin{align*}
+\int (f^+ + f^-) d\mu &= \int |f| d\mu\\
+&< \infty
+\end{align*}
+
+Now suppose $|f|$ is integrable. Then $\int |f|^+ d\mu < \infty$ and $\int |f|^- d\mu < \infty$. But observe that, since $|f| \geq 0$ everywhere, then $|f|^- = 0$ everywhere. Hence, we from this and our work in Exercise 2 that,
+\begin{align*}
+\int |f| d\mu &= \int |f|^+ d\mu - \int |f|^- d\mu\\
+&= \int |f|^+ d\mu\\
+&= \int (f^+ - f^-) d\mu
+\end{align*}
+
+Then, by Lemma 4.6.2 Part 2, we have that $f^+$ and $f^-$ are integrable and thus, $\int f^+ d\mu < \infty$ and $\int f^- d\mu < \infty$. Hence,
+\begin{align*}
+\int f^+ d\mu - \int f^- d\mu < \infty
+\end{align*}
+
+And thus, we have that $\int f d\mu = \int f^+ d\mu - \int f^- d\mu$ is integrable, as required.
+
+\begin{problem}{4}
+\end{problem}
+
+Suppose $f$ is an integrable function and fix $a \in \mathbb{R}$. We have that,
+\begin{align*}
+\int f d\mu = \int f^+ d\mu - \int f^- d\mu
+\end{align*}
+
+with $\int f^+ d\mu < \infty$ and $\int f^- d\mu < \infty$. Observe that $f^+, f^-$ are thus nonnegative integrable functions. Thus, applying Theorem 4.4.5, we have that, $af^+$ and $af^-$ are integrable. Thus, $\int af^+ d\mu < \infty$ and $\int af^- d\mu < \infty$ and so,
+\begin{align*}
+\int af^+ d\mu - \int af^- d\mu < \infty 
+\end{align*}
+
+But the above is precisely the definition of $\int af d\mu$, and so we must have that $af$ is integrable.
+
+\begin{problem}{5}
+\end{problem}
+
+Suppose that $f \leq g$ a.e. Then of course $f^+ \leq g^+$ a.e. If this were not the case, then there would be a set of positive measure on which $f^+ > g^+$, which, by the definition of $f^+$ and $g^+$, would imply that there is a set of positive measure on which $f > g$, a contradiction.\\
+
+In addition, we have that $f^- \geq g^-$ a.e. Suppose that this is not the case. Then there is a set of positive measure on which $f^- < g^-$. But this implies that $f(x) > g(x)$ for $x$ in this set (either $f(x) \geq 0$ or $f(x)$ is a negative number greater than $g(x)$). This is a contradiction, and so we must have $f^- \geq g^-$ a.e. Hence, we have that,
+\begin{align*}
+\int f d\mu &= \int f^+ d\mu - \int f^- d\mu 
+\end{align*}
+
+where $f^+ \leq g^+$ a.e. and $f^- \geq g^-$ a.e. Now let us consider $\int f^+ d\mu$ and $\int g^+ d\mu$. We have,
+\begin{align*}
+\int f^+ d\mu = \sup \{\int s d\mu \ : \ s \text{ is simple and } 0 \leq s \leq f^+\}\\
+\int g^+ d\mu = \sup \{\int s d\mu \ : \ s_g \text{ is simple and } 0 \leq s \leq g^+\}
+\end{align*}
+
+We have that $f^+ \leq g^+$ a.e. Let $s_g$ be the supremum of simple function in the above set, and the same for $s_f$. Then we must have $s_f \leq s_g$ a.e. as well. Observe that the set $X$ where $s_f > s_g$ is measure $0$, and so it does contribute at all to the value of the integral by Corollary 4.3.3. Thus, we can disregard $X$ when calculating the integral and so apply Theorem 4.3.2(2) which states that,
+\begin{align*}
+\int s_f d\mu \leq \int s_g d\mu
+\end{align*}
+
+Since these were the supremum of simple functions approximating $f^+$ and $g^+$, we have that,
+\begin{align*}
+\int f^+ d\mu \leq \int g^+ d\mu
+\end{align*}
+
+Similarly, we have that,
+\begin{align*}
+\int f^- d\mu \geq \int g^- d\mu
+\end{align*}
+
+These two inequalities and the fact that all of these integrals are nonnegative give us that,
+\begin{align*}
+\int f d\mu = \int f^+ d\mu - \int f^- d\mu \leq \int g^+ d\mu - \int g^- d\mu = \int g d\mu
+\end{align*}
+
+as required.
+
+\newpage
+\begin{problem}{6}
+\end{problem}
+
+Let $f$ be an integrable function and suppose that $\int_A f d\mu = 0$ for all measurable sets $A$. Then we have,
+\begin{align*}
+\int_A f^+ d\mu - \int_A f^- d\mu = 0
+\end{align*}
+
+Since both of the above integrals are nonnegative, we must have that $\int_A f^+ d\mu = 0 = \int_A f^- d\mu$. Since $f^+$ and $f^-$ are both nonnegative measurable functions, by Problem 4.4.2 (solved on the previous HW), we have that $f^+ = 0$ a.e. and $f^- = 0$ a.e. on $A$. Let $X$ be the set where $f^+ > 0$ and  $Y$ be the set where $f^- > 0$ and let $Z = X \cup Y$. Then $\mu(Z) \leq \mu(X) + \mu(Y) = 0 + 0 = 0$. Note that $Z$ is precisely the set where $f \neq 0$ (since when $f = 0$ we have $f^+ = f^- = 0$ and when $f \neq 0$, one of $f^+$ and $f^-$ is greater than $0$). Hence, the set of values where $f \neq 0$ on $A$ has measure $0$ and so $f = 0$ a.e. on $A$.\\
+
+\begin{problem}{7}
+\end{problem}
+
+Suppose $f$ is a nonnegative integrable function and that $\{E_p\}_{p>0}$ is a sequence of decreasing $(E_{p+1} \subset E_p)$ measurable sets. Furthermore, suppose $\lim_{p \to \infty} \mu(E_p) = 0$. We want to show that $$\int_{\cap_{p > 0} E_p} f d\mu = 0$$ We know that since $\lim_{p \to \infty} \mu(E_p) = 0$ that for every $\epsilon > 0$, there exists $N \in \mathbb{N}$ such that for all $n > N$, we have that $|E_n| < \epsilon$. Observe that since we have a decreasing sequence of sets, for any finite subset $\{E_0, E_1, \ldots, E_k\}$, we have that $\cap_{i=0}^k E_i = E_k$ and so $\mu\left(\cap_{i=0}^k E_i\right) = \mu(E_k)$. Thus, by Proposition 2.5.2(2), we have
+\begin{align*}
+\mu \left(\cap_{p>0} E_p\right) &= \lim_{p \to \infty} \mu \left(E_p\right)\\
+&= 0
+\end{align*}
+
+Note that since $\mu \left(\cap_{p>0} E_p\right)$, any measurable subset of $\cap_{p>0} E_p$ must have measure $0$ as well. Thus, for any simple function $s$ defined on $\mu \left(\cap_{p>0} E_p\right)$, we have that $s = 0$. But this implies that $\int_{\cap_{p > 0} E_p} s d\mu$ for all simple functions $s$ by the formulation of the integral given by Corollary 4.3.3. But if the integral of any simple function on $\cap_{p>0} E_p$ is $0$, then we have that the integral of non-negative simple function must be $0$ as well because, for a nonnegative function $g$,
+\begin{align*}
+\int_{\cap_{p > 0} E_p} g d\mu &= \sup \{\int_{\cap_{p > 0} E_p} s d\mu \ : \ s \text{ is simple and } 0 \leq s \leq g\}\\
+&= \sup \{0\}\\
+&= 0
+\end{align*}
+
+Since $f^+$ and $f^-$ are nonnegative measurable functions defined on $\cap_{p>0} E_p$, we have that
+\begin{align*}
+\int_{\cap_{p > 0} E_p} f^+ d\mu = 0 = \int_{\cap_{p > 0} E_p} f^- d\mu
+\end{align*}
+
+And, hence,
+\begin{align*}
+\int_{\cap_{p > 0} E_p} f d\mu &= \int_{\cap_{p > 0} E_p} f^+ d\mu - \int_{\cap_{p > 0} E_p} f^- d\mu\\
+&= 0 - 0 = 0
+\end{align*}
+
+as required.
+
+\begin{problem}{9}
+\end{problem}
+
+Let $f: X \to \mathbb{R}^*$ be a measurable function and $f$ is integrable. Now suppose $|f(x)| = \infty$ on a set $X$ with $\mu(X) > 0$. Then $f = \infty$ or $f = -\infty$ (or both) on a set of positive measure. Thus, we have that either $f^+ = \infty$ or $f^- = \infty$ (or both) on a set of positive measure. Thus, a maximal $s$ approximating simple function on $f^+$ or $f^-$ (or both) must attain $\infty$ on a set of positive measure. Hence, we have $s = \sum^n a_i \mu(A_i) = a_0 \mu(A_0) + a_1 \mu(A_1) + \cdots + \infty \mu(A_k) + \cdots + a_n \mu(A_n) = \infty$. Since $\infty$ is the max value attainable in $\mathbb{R}^*$ it must be the supremum of any subset of $\mathbb{R}^*$ containing it, and so,
+\begin{align*}
+\int f^+ d\mu &= \sup \{ \int s d\mu \ : \ s \text{ is simple and } 0 \leq s \leq f^+\}\\
+&= \infty
+\end{align*}
+
+or,
+\begin{align*}
+\int f^- d\mu &= \sup \{ \int s d\mu \ : \ s \text{ is simple and } 0 \leq s \leq f^-\}\\
+&= \infty
+\end{align*}
+
+or both. But note that $f$ is only Lebesgue integrable if both $\int f^+ < \infty$ and $\int f^- < \infty$. Hence, we have that $f$ is not integrable, a contradiction. Thus, we must have that the set where $|f(x)| = \infty$ has measure $0$. That is, $|f(x)| < \infty$ a.e.
+
+\end{document}
