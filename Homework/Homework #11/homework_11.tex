@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Homework 11}
+
+\author{Chris Hayduk}
+\date{May 4, 2021}
+
+\maketitle
+
+\section{Questions from Silva}
+
+\subsection{Section 4.5}
+
+\begin{problem}{2}
+\end{problem}
+
+\begin{problem}{3}
+\end{problem}
+
+\subsection{Section 5.1}
+
+\begin{problem}{2}
+\end{problem}
+
+Let $T: X \to X$ be a measure-preserving transformation with $\mu(X) = 1$ and suppose that for every measurable set $A$ the limit
+\begin{align*}
+\lim_{n \to \infty} \frac{1}{n} \sum_{i=0}^{n-1} \mathbb{I}_A(T^i(x))
+\end{align*}
+
+exists and equals $\mu(A)$ a.e. We want to show that $T$ is ergodic. Let us fix two measurable sets $A, B$. Other than on two sets of measure $0$ (whose union is measure $0$), we have,
+\begin{align*}
+\mu(A) \mu(B) &= \lim_{n \to \infty} \frac{1}{n} \sum_{i=0}^{n-1} \mathbb{I}_A(T^i(x)) \cdot \lim_{n \to \infty} \frac{1}{n} \sum_{i=0}^{n-1} \mathbb{I}_B(T^i(x))\\
+&=  \lim_{n \to \infty} \frac{1}{n} \sum_{i=0}^{n-1} \sum_{j=0}^{n-1}  \mathbb{I}_A(T^i(x)) \mathbb{I}_B(T^j(x))\\
+&= \lim_{n \to \infty} \frac{1}{n} \sum_{i=0}^{n-1} \mathbb{I}_{A \cap B}(T^i(x))\\
+&= 
+\end{align*}
+
+\begin{problem}{3}
+\end{problem}
+
+\subsection{Section 5.2}
+
+\begin{problem}{2}
+\end{problem}
+
+\begin{problem}{4}
+\end{problem}
+
+\begin{problem}{5}
+\end{problem}
+
+\end{document}

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  3 MAY 2021 00:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  3 MAY 2021 18:48
 entering extended mode
-**./homework_10.tex
-(homework_10.tex
+**./homework_11.tex
+(homework_11.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> xparse <2020-03-03>
 (C:\MiKTeX\tex/latex/base\article.cls
@@ -265,8 +265,8 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box51
-) (homework_10.aux)
-\openout1 = `homework_10.aux'.
+) (homework_11.aux)
+\openout1 = `homework_11.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
@@ -381,45 +381,35 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 66.
+(Font)              <12> on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 66.
+(Font)              <8> on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 66.
+(Font)              <6> on input line 74.
  [1
 
-{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-
- []
-
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-
- []
-
-[4] [5] (homework_10.aux) ) 
+{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (homework_11.au
+x) ) 
 Here is how much of TeX's memory you used:
- 4259 strings out of 479334
- 59024 string characters out of 2873605
- 365175 words of memory out of 3000000
- 21634 multiletter control sequences out of 15000+200000
- 456793 words of font info for 75 fonts, out of 3000000 for 9000
+ 4255 strings out of 479334
+ 58986 string characters out of 2873605
+ 360175 words of memory out of 3000000
+ 21632 multiletter control sequences out of 15000+200000
+ 450813 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,16n,74p,737b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/MiKTeX/f
-onts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:
-/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.en
-c}<C:/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/
-lmex10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/p
-ublic/lm/lmmi6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/MiKTeX/fonts/
-type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/MiKTeX
-/fonts/type1/public/lm/lmr6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/M
-iKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy8.p
-fb><C:/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework_10.pdf (5 pages, 165624 bytes).
+ 68i,8n,74p,233b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/MiKTeX/fonts/enc/dvips/lm/l
+m-rm.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKTeX/fonts/enc/dvips
+/lm/lm-mathit.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/MiKTeX/fonts/type
+1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/MiKTeX/f
+onts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/
+MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr17.p
+fb><C:/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/l
+msy10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb>
+Output written on homework_11.pdf (1 page, 122006 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
