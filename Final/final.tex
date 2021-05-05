@@ -1,0 +1,197 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Dynamical Systems II: Final}
+
+\author{Chris Hayduk}
+\date{May 11, 2021}
+
+\maketitle
+
+\begin{problem}{1}
+\end{problem}
+
+Recall that a rotation of the plane is a linear map of the form
+
+\begin{align*}
+R: \mathbb{R}^2 \to \mathbb{R}^2; \ \ R \begin{pmatrix}
+x \\ y
+\end{pmatrix} = \begin{pmatrix}
+\cos \theta & -\sin \theta\\
+\sin \theta & \cos \theta
+\end{pmatrix} \begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\end{align*}
+
+This map preserves Lebesgue measure, but we want to show that it is never ergodic.\\
+
+We have that,
+\begin{align*}
+R \begin{pmatrix}
+x \\ y
+\end{pmatrix} &= \begin{pmatrix}
+\cos \theta & -\sin \theta\\
+\sin \theta & \cos \theta
+\end{pmatrix} \begin{pmatrix}
+x \\ y
+\end{pmatrix}\\
+&= \begin{pmatrix}
+x \cos \theta - y \sin \theta \\ x \sin \theta + y \cos \theta
+\end{pmatrix}
+\end{align*}
+
+\begin{align*}
+R^{-1}\begin{pmatrix}
+x \\ y
+\end{pmatrix} &= \frac{1}{\cos^2 \theta + \sin^2 \theta} \begin{pmatrix}
+\cos \theta & \sin \theta\\
+-\sin \theta & \cos \theta
+\end{pmatrix}\begin{pmatrix}
+x \\ y
+\end{pmatrix}\\
+&= \begin{pmatrix}
+\cos \theta & \sin \theta\\
+-\sin \theta & \cos \theta
+\end{pmatrix}\begin{pmatrix}
+x \\ y
+\end{pmatrix}\\
+&= \begin{pmatrix}
+x \cos \theta + y \sin \theta \\ -x \sin \theta + y \cos \theta
+\end{pmatrix}
+\end{align*}
+
+Let us now consider the unit disk in $\mathbb{R}^2$, denoted by $A = \{(x, y) \in \mathbb{R}^2: \ -1 \leq x^2 + y^2 \leq 1\}$. We have that Lebesgue measure is a generalization of area in $\mathbb{R}^2$ and, since the unit disk has a well-defined area, we know its Lebesgue measure must be equal to $1$.\\
+
+
+Let us fix $(x, y) \in A$. Then $-1 \leq x^2 + y^2 \leq 1$. Applying $R$ to this point, we get,
+\begin{align*}
+x' &= x \cos \theta - y \sin \theta\\
+y' &= x \sin \theta + y \cos \theta
+\end{align*}
+
+And note that,
+\begin{align*}
+(x')^2 + (y')^2 &= (x \cos \theta - y \sin \theta)^2 + (x \sin \theta + y \cos \theta)^2\\
+&= x^2 \cos^2 \theta - 2xy \cos \theta \sin \theta + y^2 \sin^2 \theta + x^2 \sin^2 \theta + 2xy \sin \theta \cos \theta + y^2 \cos^2 \theta\\
+&= x^2 \cos^2 \theta + y^2 \sin^2 \theta + x^2 \sin^2 \theta + y^2 \cos^2 \theta\\
+&= x^2(\cos^2 \theta + \sin ^2 \theta) + y^2(\cos^2 \theta + \sin^2 \theta)\\
+&= x^2 + y^2
+\end{align*}
+
+And so we have $-1 \leq (x')^2 + (y')^2 \leq 1$ as well. Thus, $R \begin{pmatrix}
+x \\ y
+\end{pmatrix} \in A$ and, since $(x, y) \in A$ was arbitrary, we have that $(x, y) \in A \implies R \begin{pmatrix}
+x \\ y
+\end{pmatrix} \in A$.\\
+
+Now applying $R^{-1}$ to an arbitrary $(x, y)$, we get,
+\begin{align*}
+x' &= x \cos \theta + y \sin \theta\\
+y' &= -x \sin \theta + y \cos \theta
+\end{align*}
+
+And note that,
+\begin{align*}
+(x')^2 + (y')^2 &= (x \cos \theta + y \sin \theta)^2 + (-x \sin \theta + y \cos \theta)^2\\
+&= x^2 \cos^2 \theta + 2xy \cos \theta \sin \theta + y^2 \sin^2 \theta + x^2 \sin^2 \theta - 2xy \sin \theta \cos \theta + y^2 \cos^2 \theta\\
+&= x^2 \cos^2 \theta + y^2 \sin^2 \theta + x^2 \sin^2 \theta + y^2 \cos^2 \theta\\
+&= x^2(\cos^2 \theta + \sin ^2 \theta) + y^2(\cos^2 \theta + \sin^2 \theta)\\
+&= x^2 + y^2
+\end{align*}
+
+And so we have $-1 \leq (x')^2 + (y')^2 \leq 1$ as well. Thus, $R^{-1}\begin{pmatrix}
+x \\ y
+\end{pmatrix} \in A$ and, since $(x, y) \in A$ was arbitrary, we have that $(x, y) \in A \implies R^{-1}\begin{pmatrix}
+x \\ y
+\end{pmatrix} \in A$.\\
+
+Thus, from the above derivations, we must have that $A$ is strictly $R$-invariant. However, as we said above, note that $A$ has measure $1$. Moreover, $A^c = \{(x, y) \in \mathbb{R}^2: \ -1 \leq x^2 + y^2 \leq 1\}$, which is a set of infinite measure (the area of the plane minus the unit disk). Hence, although $A$ is strictly $R$-invariant, we do not have that $\mu(A) = 0$, nor that $\mu(A^c) = 0$. As a result, $R$ is not ergodic for any value of $\theta$.
+
+\begin{problem}{2}
+\end{problem}
+
+\begin{problem}{3}
+\end{problem}
+
+\begin{enumerate}[label=\alph*)]
+
+\item
+
+\item
+
+\end{enumerate}
+
+\begin{problem}{4}
+\end{problem}
+
+\begin{problem}{5}
+\end{problem}
+
+\begin{enumerate}[label=\alph*)]
+
+\item
+
+\item
+
+\end{enumerate}
+
+\begin{problem}{6}
+\end{problem}
+
+\begin{enumerate}[label=\alph*)]
+
+\item
+
+\item
+
+\end{enumerate}
+
+
+
+\end{document}
