@@ -153,32 +153,162 @@ x \\ y
 
 Thus, from the above derivations, we must have that $A$ is strictly $R$-invariant. However, as we said above, note that $A$ has measure $1$. Moreover, $A^c = \{(x, y) \in \mathbb{R}^2: \ -1 \leq x^2 + y^2 \leq 1\}$, which is a set of infinite measure (the area of the plane minus the unit disk). Hence, although $A$ is strictly $R$-invariant, we do not have that $\mu(A) = 0$, nor that $\mu(A^c) = 0$. As a result, $R$ is not ergodic for any value of $\theta$.
 
+\newpage
 \begin{problem}{2}
 \end{problem}
+
+Let $(X, \mathcal{S}, \mu)$ be a measure space and suppose that $S: X \to X$ and $T: X \to X$ are measure-preserving transformations. We want to show that their composition, $S \circ T$, preserves measure as well.\\
+
+Since $S$ and $T$ are measure-preserving transformations, for any $A \in \mathcal{S}(X)$ we have that $\mu(S^{-1}(A)) = \mu(A)$ and $\mu(T^{-1}(A)) = \mu(A)$. Let us consider $(S \circ T)^{-1} = T^{-1} \circ S^{-1}$. We have,
+\begin{align*}
+(T^{-1} \circ S^{-1})(A) &= T^{-1}(S^{-1}(A))
+\end{align*}
+
+We have that, since $S$ is measure-preserving, then $\mu(S^{-1}(A)) = \mu(A)$. Moreover, since $S^{-1}(A)$ is measurable, we have that $S^{-1}(A) \in \mathcal{S}(X)$ and hence. Let us call this set $B$. Then we have,
+\begin{align*}
+T^{-1}(S^{-1}(A)) &= T^{-1}(B)
+\end{align*}
+
+and, since $T$ is measure-preserving, we have
+\begin{align*}
+\mu(T^{-1})(B) &= \mu(B)\\
+&= \mu(S^{-1}(A))\\
+&= \mu(A)
+\end{align*} 
+
+Sine $A \in \mathcal{S}(X)$, this holds for every set in $\mathcal{S}(X)$ and so $S \circ T$ is measure-preserving.
 
 \begin{problem}{3}
 \end{problem}
 
 \begin{enumerate}[label=\alph*)]
 
-\item
+\item Let us begin by showing that $D$ is measurable using the Dyadic squares. Fix a set $A$ in the Dyadic squares and consider $D^{-1}(A)$. Observe that for $x, y \in [0, 1/2)$, we have that $2x \in [0, 1)$ and $y \in [0, 1)$. Hence, we can consider $D(x,y)$ on $[0, 1/2) \times [0, 1/2)$ to be just $D(x,y) = (2x, 2y)$. Now, for $x, y \in (1/2, 1)$, we have that $D(x,y) \in (0, 1)$. Note that for $x, y$ in this interval, we have $2x \mod 1 = 2x-1$ and $2y \mod 1 = 2y-1$. Thus, for $x,y \in (1/2, 1)$ we have $D(x, y) = (2x-1, 2y-1)$. Hence, rephrasing $D$, we have,
+\begin{align*}
+D(x, y) &= \begin{cases}
+(2x, 2y) & x, y \in [0, 1/2)\\
+(2x, 2y-1) & x \in [0, 1/2), y \in (1/2, 1)\\
+(2x-1, 2y) & x \in (1/2, 1), y \in [0, 1/2)\\
+(2x-1, 2y-1) & x, y \in (1/2, 1)
+\end{cases}
+\end{align*}
 
-\item
+Hence, we can think of $D(x,y)$ as a cross product of the tent map on $[0, 1)$ with $\mu = 2$. We can now formulate the inverse of $D(x,y)$ as,
+\begin{align*}
+D^{-1}(x, y) &= \begin{cases}
+(x/2, y/2) & x, y \in [0, 1/2)\\
+(x/2, y/2 + 1/2) & x \in [0, 1/2), y \in (1/2, 1)\\
+(x/2 + 1/2, y/2) & x \in (1/2, 1), y \in [0, 1/2)\\
+(x/2 +1/2, y/2 + 1/2) & x, y \in (1/2, 1)
+\end{cases}
+\end{align*}
+
+Denote each of the four cases of $D^{-1}(x,y)$ as $D_i^{-1}(x,y)$ for $i \in \{1, \ldots, 4\}$ and observe that $\lambda(A) = 1/2^k \cdot 1/2^k = 1/4^k$. Now let us check $D^{-1}(A)$. We have,
+\begin{align*}
+\lambda(D^{-1}(A)) &= \lambda(D_1^{-1}(A)) + \lambda(D_2^{-1}(A)) + \lambda(D_3^{-1}(A)) + \lambda(D_4^{-1}(A))
+\end{align*}
+
+Let us now split up each $D_i$ into $D_{i_x}$ and $D_{i_y}$ for the $x$ and $y$ components. In addition, write $A_x$ for the x component of $A$ and $A_y$ for the y component. Then,
+\begin{align*}
+\lambda(D_i^{-1}(A)) = \lambda(D_{i_x}^{-1}(A_x)) \cdot \lambda(D_{i_y}^{-1}(A_y))
+\end{align*}
+
+Further, observe that $\lambda(D_{i_x}^{-1}(A_x)) = \frac{1}{2} \lambda(A_x)$ and $\lambda(D_{i_y}^{-1}(A_y)) = \frac{1}{2} \lambda(A_y)$ by the proof of Theorem 3.3.1 in the text. Note that $\lambda(A_x) = 1/2^k$ and $\lambda(A_y) = 1/2^k$, so
+\begin{align*}
+\lambda(D_i^{-1}(A)) &= \frac{1}{2} \lambda(A_x) \cdot \frac{1}{2} \lambda(A_y)\\
+&= \frac{1}{4} \cdot \frac{1}{4^k}
+\end{align*}
+
+This is true for every $i$ and thus,
+\begin{align*}
+\lambda(D^{-1}(A)) &= \lambda(D_1^{-1}(A)) + \lambda(D_2^{-1}(A)) + \lambda(D_3^{-1}(A)) + \lambda(D_4^{-1}(A))\\
+&= \frac{1}{4} \cdot \frac{1}{4^k} + \frac{1}{4} \cdot \frac{1}{4^k} +  \frac{1}{4} \cdot \frac{1}{4^k} + \frac{1}{4} \cdot \frac{1}{4^k}\\
+&= \frac{1}{4^k}\\
+&= \lambda(A)
+\end{align*}
+
+Since $A$ was an arbitrary Dyadic square, we thus have that $D$ is measure-preserving.
+
+\item We want to show that $D$ is ergodic. Hence, we want to show that for any $D$-invariant measurable set $A$ (that is, $D^{-1}(A) = A$), we have either $\lambda(A) = 0$ or $\lambda(A^c) = 0$. Again we can consider a Dyadic square $A$ since the Dyadic squares form a sufficient semiring for Lebesgue measure. Hence, $A = [\frac{p}{2^k}, \frac{p+1}{2^k}) \times [\frac{q}{2^k}, \frac{q+1}{2^k})$ for $k, p, q$ integers with $k \geq 0$. Observe that $D^{-1}(A) = A$ implies that
+
+\begin{align*}
+D^{-1}(A) &= D_1^{-1}(A) \sqcup D_2^{-1}(A) \sqcup D_3^{-1}(A) \sqcup D_4^{-1}(A)\\
+&= [\frac{p}{2^{k+1}}, \frac{p+1}{2^{k+1}}) \times [\frac{q}{2^{k+1}}, \frac{q+1}{2^{k+1}}) \ \bigsqcup \\
+&[\frac{p}{2^{k+1}}, \frac{p+1}{2^{k+1}}) \times [\frac{q+1}{2^{k+1}}, \frac{q+2}{2^{k+1}}) \ \bigsqcup \\
+&[\frac{p+1}{2^{k+1}}, \frac{p+2}{2^{k+1}}) \times [\frac{q}{2^{k+1}}, \frac{q+1}{2^{k+1}}) \ \bigsqcup \\
+&[\frac{p+1}{2^{k+1}}, \frac{p+2}{2^{k+1}}) \times [\frac{q+1}{2^{k+1}}, \frac{q+2}{2^{k+1}}) \\
+&= [\frac{p}{2^{k+1}}, \frac{p+2}{2^{k+1}}) \times [\frac{q}{2^{k+1}}, \frac{q+2}{2^{k+1}}) 
+\end{align*}
+
+Observe that $\frac{p+2}{2^{k+1}} < \frac{p+1}{2^k}$ and so $D^{-1}(A) \neq A$ for all Dyadic squares.
 
 \end{enumerate}
 
 \begin{problem}{4}
 \end{problem}
 
+Recall that $\mathcal{B}(\mathbb{R})$ is the smallest $\sigma$-algebra containing the open sets. Since $X \in \mathcal{B}(\mathbb{R})$, we have that $\mathcal{B}(X) = \{A \cap X: \ A \in \mathcal{B}(\mathbb{R})\}$.\\
+
+We are given that $T: X \to X$ is a Borel-measurable transformation for a set $X \in \mathcal{B}(\mathbb{R})$ (that is, $X$ is a Borel set). Since $T$ is Borel measurable, we have $T^{-1}(B) \in \mathcal{B}(X)$ for all $B \in \mathcal{B}(X)$.\\
+
+Define $p: X \to [- \infty, + \infty]$ by,
+\begin{align*}
+x \mapsto \begin{cases}
+k & \text{if } x \text{ is periodic and has least period } k\\
++\infty & \text{if } x \text{ is not periodic}
+\end{cases}
+\end{align*}
+
+where \textit{least period} $k$ means that $k \geq 1$ is the minimal integer such that $T^k(x) = x$.\\
+
+We want to prove that $p$ is Borel measurable. Recall that $p: X \to \mathbb{R}^*$ is $\mathcal{B}(X)$ measurable iff $p^{-1}([-\infty, a)) \in \mathcal{B}(X)$ for every $a \in \mathbb{R}$. Equivalently, $p: X \to \mathbb{R}^*$ is $\mathcal{B}(X)$-measurable iff $p^{-1}(C) \in \mathcal{B}(X)$ for every $C \in \mathcal{B}(\mathbb{R}^*) = \mathcal{B}(\mathbb{R}) \sqcup P(\{\pm \infty\})$.\\
+
+Note that $x \in X$ is period $k$ if and only if $T^k(x) - x = 0$. So consider the set $[-\infty, a)$ for some $a \in \mathbb{R}$. We have $p^{-1}([-\infty, a))$ is the set of $x \in X$ with $T^k(x) - x = 0$ for some $k \in \mathbb{N}$ with $k < a$. Since we know $k \geq 1$ and $p(x) \mapsto +\infty$ when $x$ is not periodic, we have that $$p^{-1}([-\infty, a)) = p^{-1}([1, a))$$ for $a \geq 1$ and $$p^{-1}([-\infty, a)) = \emptyset$$ for $a < 1$. Since the empty set is trivially measurable, let us only consider $a \geq 1$.\\
+
+For $a \geq 1$, we have that,
+\begin{align*}
+p^{-1}([-\infty, a)) &= p^{-1}([1, a))\\
+&= \bigcup_{i=1}^a \{x \in X \ : \ T^i(x) - x = 0\}\\
+&= \bigcup_{i=1}^a \{x \in X \ : \ T^i(x) = 0\}
+\end{align*}
+
+Now, note that by Lemma 4.2.6, since $T: X \to X$ is a measurable transformation and $X \subset \mathbb{R}$, we then have that $T \circ T = T^2$ is measurable. Proceeding inductively, we have that $T^j$ is measurable for any $j \geq 1$. Moreover, by Exercise 4.4.9, we have that since $T^j$ is Borel measurable (and hence Lebesgue measruable), then $\{x \in X \ : \ T^j(x) = a\}$ is measurable for any $a$. In particular, $\{x \in X \ : \ T^j(x) = x\}$ is measurable. Hence, for $a \geq 1$, we have that $p^{-1}([-\infty, a)) = p^{-1}([1, a))$ is just a countable union of elements in $\mathcal{B}(X)$ and hence, since $\mathcal{B}(X)$ is a $\sigma$-algebra, we have,
+\begin{align*}
+p^{-1}([-\infty, a)) &= p^{-1}([1, a))\\
+&= \left(\bigcup_{i=1}^a \{x \in X \ : \ T^i(x) = 0\}\right) \in \mathcal{B}(X)
+\end{align*}
+
+Thus, $p^{-1}([-\infty, a))$ is measurable for any $a \geq 1$. We have now covered every case of $a \in \mathbb{R}$ and so, we have that $p^{-1}([-\infty, a)) \in \mathcal{B}(X)$ for every $a \in \mathbb{R}$. Thus, $p$ is measurable.
+
 \begin{problem}{5}
 \end{problem}
 
 \begin{enumerate}[label=\alph*)]
 
-\item
+\item Recall that a point $x$ is periodic if $T^k(x)$ for some $k \geq 1$. Since almost every point of $x$ is periodic under $T$, there is a set $N$ with $\lambda(N) = 0$ which contains all of the point which are \textit{not} periodic under $T$. Now fix a measurable set $A \subset X$. Consider the set $A \setminus N$. By the definitions of $T$ and $N$, we have that $A \setminus N$ must consist only of points which are recurrent. Thus, for every $x \in A \setminus N$, there exists $k = k(x) > 0$ such that $T^k(x) = x \in A \setminus N$. Since $\lambda(N) = 0$ and $A$ was arbitrary, we have that $T$ is recurrent.
 
-\item
+\item Fix $A \subset X$ and a point $x \in A \setminus N$. Hence, $n$ is periodic with period $k \geq 1$. Clearly we have that $\{x, T(x), T^2(x), \ldots, T^{k-1}(x)\}$ is a $T$-invariant set. Applying $T^{-1}$ gives us,
+\begin{align*}
+\{T^{-1}(x), x, T(x), \ldots, T^{k-2}(x)\} &= \{T^{k-1}(x), x, T(x), \ldots, T^{k-2}(x)\}\\
+&= \{x, T(x), T^2(x), \ldots, T^{k-1}(x)\}
+\end{align*} 
 
+Observe that, since there are a finite number of elements in this orbit, we have that $\lambda(A) = 0$ and $\lambda(X \setminus (A \cup N)) = \lambda(X)$. Since $\lambda(X) > 0$, there must be ``more'' of these orbits outside of $A$ in some sense. Moreover, observe that the orbits of each point are either disjoint or equal to each other. To show this, suppose that the orbits of two points $x$ and $y$ have a non-empty intersection. Then $T^j(x) = T^i(y)$ for some $i,j \geq 1$. But note that, if $x$ has period $k$, then $T^{k-j}(T^j(x)) = T^k(x) = x$ and thus $T^{k-j}(T^i(y)) = T^{k-j+i}(y)  = x$. Thus we must have,
+\begin{align*}
+T^{k-j+1}(T^j(x)) = T^{k+1}(x) &= T^2(x)\\
+&= T^{k-j+1}(T^i(y))\\
+&= T^{k-j+1+i}(y)
+\end{align*}
+
+Continuing by induction, we see that the orbit of $y$ equals the orbit of $x$ for every point after $T^i(y)$. But note that $y$ is also periodic with period $\ell$. Then there is some point in the orbit of $x$ such that $T^m(x) = y$. Hence, for all $n$ such that $1 \leq n < i$, we must have that $T^n(y)$ is equal to an element of the orbit of $x$ as well. Thus, these are the same orbit.\\
+
+In the case where the intersection of the orbits is empty, it is clear that the two orbits are disjoint.\\
+
+Let us now divide $X$ into two sets, $A$ containing some of the orbits and $B$ containing orbits which are disjoint from all of the orbits in $A$. Observe that it is possible to construct two such sets of positive measure. If it were not, it would mean that every element, up to a set of $0$ measure, would be contained within a single orbit. But note that each orbit has finite elements and thus has measure $0$. Hence, this is a contradiction and there must be more than $1$ orbit.\\
+
+Thus, we have $\lambda(A) > 0$ and $\lambda(B) > 0$, with $A \cap B = \emptyset$. Observe further that $A^c = B \cup N$ because $B$ contains all the orbits which are not in $A$ and $N$ contains all the points which are not part of any orbit (we know the points of $N$ are not part of any orbit because they are not periodic and every point of an orbit is periodic).\\
+
+Thus, we have that $\lambda(A) > 0$ and $\lambda(A^c) = \lambda(B \sqcup N) = \lambda(B) > 0$ as well. In addition, by our discussion above, we have that every orbit in $A$ is $T$-invariant and thus $T^{-1}(A) = A$. Moreover, all of the orbits in $B$ are $T$-invariant. Lastly, as previously stated, no element of $N$ can be an element of an orbit. Since the orbits are exactly the set $N^c$, we have that $N$ is $T$-invariant and so $T^{-1}(N) = N$ as well. Thus, $$T^{-1}(A) = A$$ and $$T^{-1}(A^c) = T^{-1}(B \sqcup N) = B \sqcup N$$ but $\lambda(A) > 0$ and $\lambda(A^c) > 0$. As a result, we have violated the definition of ergodicity and $T$ is not ergodic.
 \end{enumerate}
 
 \begin{problem}{6}
@@ -186,7 +316,14 @@ Thus, from the above derivations, we must have that $A$ is strictly $R$-invarian
 
 \begin{enumerate}[label=\alph*)]
 
-\item
+\item We have that the set of intervals with rational endpoints forms a sufficent semi-ring for $\mathbb{R}$. Hence, in order to show that $S$ preserves Lebesgue measure, we must show that $S^{-1}(I)$ is measurable and that $\lambda(S^{-1}(I)) = \lambda(I)$ for any interval $I$ with rational endpoints.\\
+
+Observe that,
+\begin{align*}
+S^{-1}(y_1) &= \{y \in \mathbb{R}: \ y = x + n \text{ for some } x \in [0, 1), \ n \in \mathbb{Z} \text{ with } T(x) + n + \phi(x) = x_1 + n_1 = y_1\}
+\end{align*}
+
+Now let us fix an interval with rational endpoints $(p_1/q_1, p_2/q_2)$ with $p_1, q_1, p_2, q_2 \in \mathbb{Z}$. 
 
 \item
 
