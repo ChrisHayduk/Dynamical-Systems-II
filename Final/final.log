@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  8 MAY 2021 22:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  8 MAY 2021 23:38
 entering extended mode
 **./final.tex
 (final.tex
@@ -414,17 +414,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
-[4]
+
 Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
 
@@ -438,12 +438,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
-
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
@@ -453,18 +453,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 309--310
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
 
-Overfull \hbox (49.72287pt too wide) detected at line 324
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+
+Overfull \hbox (49.72287pt too wide) detected at line 326
 []
  []
 
@@ -472,7 +477,7 @@ Overfull \hbox (49.72287pt too wide) detected at line 324
 Here is how much of TeX's memory you used:
  4260 strings out of 479334
  58937 string characters out of 2873605
- 373149 words of memory out of 3000000
+ 369149 words of memory out of 3000000
  21634 multiletter control sequences out of 15000+200000
  452044 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -488,7 +493,7 @@ e1/public/lm/lmr6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/MiKTeX/font
 s/type1/public/lm/lmri12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Mi
 KTeX/fonts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on final.pdf (7 pages, 197360 bytes).
+Output written on final.pdf (7 pages, 197781 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

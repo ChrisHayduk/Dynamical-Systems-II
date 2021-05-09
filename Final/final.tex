@@ -229,18 +229,20 @@ This is true for every $i$ and thus,
 
 Since $A$ was an arbitrary Dyadic square, we thus have that $D$ is measure-preserving.
 
-\item We want to show that $D$ is ergodic. Hence, we want to show that for any $D$-invariant measurable set $A$ (that is, $D^{-1}(A) = A$), we have either $\lambda(A) = 0$ or $\lambda(A^c) = 0$. Again we can consider a Dyadic square $A$ since the Dyadic squares form a sufficient semiring for Lebesgue measure. Hence, $A = [\frac{p}{2^k}, \frac{p+1}{2^k}) \times [\frac{q}{2^k}, \frac{q+1}{2^k})$ for $k, p, q$ integers with $k \geq 0$. Observe that $D^{-1}(A) = A$ implies that
-
+\item We want to show that $D$ is ergodic. Let $A_1$ and $B_1$ be any sets of positive measure in $\mathcal{L}(X)$. Then, since the Dyadic squares form a sufficient semiring for Lebesgue measure, there are squares $I$ and $J$ such that,
 \begin{align*}
-D^{-1}(A) &= D_1^{-1}(A) \sqcup D_2^{-1}(A) \sqcup D_3^{-1}(A) \sqcup D_4^{-1}(A)\\
-&= [\frac{p}{2^{k+1}}, \frac{p+1}{2^{k+1}}) \times [\frac{q}{2^{k+1}}, \frac{q+1}{2^{k+1}}) \ \bigsqcup \\
-&[\frac{p}{2^{k+1}}, \frac{p+1}{2^{k+1}}) \times [\frac{q+1}{2^{k+1}}, \frac{q+2}{2^{k+1}}) \ \bigsqcup \\
-&[\frac{p+1}{2^{k+1}}, \frac{p+2}{2^{k+1}}) \times [\frac{q}{2^{k+1}}, \frac{q+1}{2^{k+1}}) \ \bigsqcup \\
-&[\frac{p+1}{2^{k+1}}, \frac{p+2}{2^{k+1}}) \times [\frac{q+1}{2^{k+1}}, \frac{q+2}{2^{k+1}}) \\
-&= [\frac{p}{2^{k+1}}, \frac{p+2}{2^{k+1}}) \times [\frac{q}{2^{k+1}}, \frac{q+2}{2^{k+1}}) 
+\lambda(A_1 \cap I) > \frac{3}{4} \lambda(I) \ \text{ and } \ \lambda(B_1 \cap J) > \frac{3}{4} \lambda(J)
 \end{align*}
 
-Observe that $\frac{p+2}{2^{k+1}} < \frac{p+1}{2^k}$ and so $D^{-1}(A) \neq A$ for all Dyadic squares.
+Furthermore, we may assume that $I$ and $J$ are of the same measure. Write $A = A_1 \cap I$ and $B = B_1 \cap J$.\\
+
+Now define $I = [\frac{p_1}{2^k}, \frac{p_1+1}{2^k}) \times [\frac{q_1}{2^k}, \frac{q_1+1}{2^k})$ and $J = [\frac{p_2}{2^m}, \frac{p_2+1}{2^m}) \times [\frac{q_2}{2^m}, \frac{q_2+1}{2^m})$. Since the doubling map is chaotic in $1$ dimension, we have that its orbit is dense in both the $x$ and $y$ axes. Thus, there is an integer $n$ such that $\lambda(D^n(I) \cap J) > \frac{3}{4} \lambda(J)$. Thus, we have,
+\begin{align*}
+\lambda(D^n(A) \cap B) \geq \lambda(D^n(I) \cap J) - \lambda(I \setminus A) - \lambda(J \setminus B)\\
+> \frac{3}{4} \lambda(J) - \frac{1}{4} \lambda(I) - \frac{1}{4} \lambda(J) > 0
+\end{align*}
+
+and, by Lemma 3.7.2(5), we have that $D$ is ergodic.
 
 \end{enumerate}
 
