@@ -325,10 +325,35 @@ Observe that,
 S^{-1}(y_1) &= \{y \in \mathbb{R}: \ y = x + n \text{ for some } x \in [0, 1), \ n \in \mathbb{Z} \text{ with } T(x) + n + \phi(x) = x_1 + n_1 = y_1\}
 \end{align*}
 
-Now let us fix an interval with rational endpoints $(p_1/q_1, p_2/q_2)$ with $p_1, q_1, p_2, q_2 \in \mathbb{Z}$. 
+Now let us fix an interval with rational endpoints $I = (n_1 + p_1/q_1, n_2 + p_2/q_2)$ with $n_1, n_2, p_1, q_1, p_2, q_2 \in \mathbb{Z}$ and $0 \leq p_1 < q_1$ and $0 \leq p_2 < q_2$. Assume $n_2 \geq n_1$ and $p_2/q_2 \geq p_1/q_1$ without loss of generality.  We have that,
+\begin{align*}
+\lambda(A) = n_2 + p_2/q_2 - (n_1 + p_1/q_1)
+\end{align*}
 
-\item
+and we must show that $\lambda(S^{-1}(I)) = \lambda(I)$ in order to show that $S$ preserves Lebesgue measure. Observe that $T$ is measure-preserving and is also the only part of $S$ which maps onto the fractional part of any $x \in I$. Hence if we consider $T^{-1}(I)$, the range of values upon which $T$ is acting is only the fractional components, $(p_1/q_1, p_2/q_2)$ and so, we must have that,
+\begin{align*}
+\lambda(T^{-1}(I)) &= \lambda(T^{-1}((p_1/q_1, p_2/q_2))\\
+&= \lambda((p_1/q_1, p_2/q_2))\\
+&= p_2/q_2 - p_1/q_1
+\end{align*}
 
+
+\item Suppose $T$ is ergodic and $\phi$ is integrable with $\int_{[0,1)} \phi \, d\lambda \neq 0$. We want to show that $S$ is not recurrent. That is, we want to show that there is a measurable set $A$ of positive measure such that there is no null set $N \subset A$ with the property that for all $x \in A \setminus N$ there is $n = n(x) > 0$ with $T^n(x) \in A$.\\
+
+Let $A$ be some set of positive measure and fix $y \in A$ with $y = x + n$ where $x$ is the fractional part and $n$ is the integral part. We have that $S^k(y) = T^k(x) + n + \sum_{i=0}^{k-1} \phi(T^ix)$. Then we have,
+\begin{align*}
+\frac{1}{k} S^k(y) = \frac{1}{k} (T^k(x) + n + \sum_{i=0}^{k-1} \phi(T^ix))
+\end{align*}
+
+and so, by the Birkhoff Ergodic Theorem, we have,
+\begin{align*}
+\lim_{k \to \infty} \frac{1}{k} S^k(y) &= \lim_{k \to \infty} \frac{1}{k} (T^k(x) + n + \sum_{i=0}^{k-1} \phi(T^ix))\\
+&= \lim_{k \to \infty} \frac{1}{k} T^k(x) +   \lim_{k \to \infty} \frac{1}{k} n +  \lim_{k \to \infty} \frac{1}{k} \sum_{i=0}^{k-1} \phi(T^ix)\\
+&= 0 + 0 + \int \phi \, d \lambda\\
+&> 0
+\end{align*}
+
+But note then that $\lim_{k \to \infty} \frac{1}{k} S^k(y) > 0$ implies that $S^k(y) \to \infty$. Thus, if we fix $y$ in any interval with rational endpoints $(a, b)$, then $S^k(y)$ will leave that interval as $k \to \infty$. But by Lemma 3.5.1, if $S$ were recurrent, then there would be an increasing sequence $m_i > 0$ with $S^{m_i}(y) \in A \setminus N$ for some null set $N$ for all $i \geq 0$. However, if this were the case, then $\lim_{k \to \infty} \frac{1}{k} S^k(y)$ would equal $0$. Thus, we have a contradiction and so $S$ cannot be recurrent.
 \end{enumerate}
 
 

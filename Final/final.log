@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  8 MAY 2021 23:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  11 MAY 2021 17:48
 entering extended mode
 **./final.tex
 (final.tex
@@ -473,7 +473,12 @@ Overfull \hbox (49.72287pt too wide) detected at line 326
 []
  []
 
-[7] (final.aux) ) 
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+[8] (final.aux) ) 
 Here is how much of TeX's memory you used:
  4260 strings out of 479334
  58937 string characters out of 2873605
@@ -493,9 +498,9 @@ e1/public/lm/lmr6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/MiKTeX/font
 s/type1/public/lm/lmri12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Mi
 KTeX/fonts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on final.pdf (7 pages, 197781 bytes).
+Output written on final.pdf (8 pages, 205298 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
